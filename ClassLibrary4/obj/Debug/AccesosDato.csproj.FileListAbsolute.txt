@@ -40,3 +40,9 @@ C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibr
 C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
 C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.dll
 C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.pdb
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.dll
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.pdb
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csprojAssemblyReference.cache
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.dll
+C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.pdb

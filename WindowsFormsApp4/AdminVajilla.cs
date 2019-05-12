@@ -21,7 +21,7 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
-
+        // PROBANDO CAMBIO git hub
         private void AdminVajilla_Load(object sender, EventArgs e)
         {
             cargarGrilla();
