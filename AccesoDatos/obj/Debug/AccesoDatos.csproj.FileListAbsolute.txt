@@ -1,0 +1,12 @@
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.csprojAssemblyReference.cache
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.csprojAssemblyReference.cache
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\canch\Downloads\acceso-datos-2019-1-master (1)\acceso-datos-2019-1-master\Acceso-Datos\AccesoDatos\obj\Debug\AccesoDatos.pdb

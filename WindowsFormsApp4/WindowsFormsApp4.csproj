@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B35E9A2-9BD9-4213-B272-2A2CA79240DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp4</RootNamespace>
+    <AssemblyName>WindowsFormsApp4</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminVajilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminVajilla.Designer.cs">
+      <DependentUpon>AdminVajilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaInsumo.Designer.cs">
+      <DependentUpon>AltaInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPlato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaPlato.Designer.cs">
+      <DependentUpon>AltaPlato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignacion.Designer.cs">
+      <DependentUpon>Asignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscar.Designer.cs">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaPedido.Designer.cs">
+      <DependentUpon>CargaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta.Designer.cs">
+      <DependentUpon>Carta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobro.Designer.cs">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MesasAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MesasAdmin.Designer.cs">
+      <DependentUpon>MesasAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarSalones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarSalones.Designer.cs">
+      <DependentUpon>ModificarSalones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salones.Designer.cs">
+      <DependentUpon>Salones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vajilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vajilla.Designer.cs">
+      <DependentUpon>Vajilla.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminVajilla.resx">
+      <DependentUpon>AdminVajilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaInsumo.resx">
+      <DependentUpon>AltaInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaPlato.resx">
+      <DependentUpon>AltaPlato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignacion.resx">
+      <DependentUpon>Asignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscar.resx">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargaPedido.resx">
+      <DependentUpon>CargaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carta.resx">
+      <DependentUpon>Carta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobro.resx">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MesasAdmin.resx">
+      <DependentUpon>MesasAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarSalones.resx">
+      <DependentUpon>ModificarSalones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Salones.resx">
+      <DependentUpon>Salones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vajilla.resx">
+      <DependentUpon>Vajilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary4\AccesosDato.csproj">
+      <Project>{b11871df-eaa4-44a6-ae61-5ba90dcf4495}</Project>
+      <Name>AccesosDato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{958fd63e-983a-4a85-b36e-05dd28b8af60}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{83cde379-d0c1-4540-9e05-849dd0f9761a}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
