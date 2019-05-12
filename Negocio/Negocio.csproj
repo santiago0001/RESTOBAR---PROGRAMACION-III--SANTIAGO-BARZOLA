@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="PlatoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlConsultasCarta.cs" />
     <Compile Include="VajillaNegocio.cs" />
   </ItemGroup>
   <ItemGroup>

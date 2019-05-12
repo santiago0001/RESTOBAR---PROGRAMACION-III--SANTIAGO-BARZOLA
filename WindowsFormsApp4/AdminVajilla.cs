@@ -112,9 +112,14 @@ namespace WindowsFormsApp4
 
         private void button3_Click(object sender, EventArgs e)
         {
-            VajillaNegocio negocio = new VajillaNegocio();
-            negocio.DeleteVajilla((Insumo)AdminVajillaView.CurrentRow.DataBoundItem);
-            cargarGrilla();
+            DialogResult resul = MessageBox.Show("Seguro que quiere eliminar?", "Eliminar Registro", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                VajillaNegocio negocio = new VajillaNegocio();
+                negocio.DeleteVajilla((Insumo)AdminVajillaView.CurrentRow.DataBoundItem);
+                cargarGrilla();
+            }
+            
         }
 
         void ButBuscar_Click(object sender, EventArgs e)

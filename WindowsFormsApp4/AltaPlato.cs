@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
-using AccesoDato;
+using AccesoDatos;
 using System.Data.SqlClient;
 using WindowsFormsApp4;
 
@@ -18,67 +18,84 @@ namespace Negocio
 {
     public partial class AltaPlato : Form
     {
-        SqlConsultas sql = new SqlConsultas();
-        SqlConsultasCarta sqlCar = new SqlConsultasCarta();
+        private Plato PlatoLocal = null;
         public AltaPlato()
         {
             InitializeComponent();
            
         }
-        public AltaPlato(string id)
+        public AltaPlato(Plato plato)
         {
             InitializeComponent();
-
+            PlatoLocal = plato;
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string id = idLabel.Text;
-            if (id.Equals("nuevo"))
-            {
-                if (sqlCar.Insertar(txtNombrePla.Text, txtPrecioPla.Text, comboBoxPla.Text, chktenedor.Checked.ToString(), chkCuchillo.Checked.ToString(), chkCuchara.Checked.ToString()))
+                PlatoNegocio negocio = new PlatoNegocio();
+
+                // si es nuevo
+                if (PlatoLocal == null)
+                    PlatoLocal = new Plato();
+
+                // si es existente
+                PlatoLocal.Nombre = txtNombrePla.Text;
+                PlatoLocal.Precio = Convert.ToDecimal(txtPrecioPla.Text);
+                PlatoLocal.Tipo = comboBoxPla.Text;
+            PlatoLocal.Tenedor = chktenedor.Checked;
+            PlatoLocal.Cuchara = chkCuchara.Checked;
+            PlatoLocal.Cuchillo = chkCuchillo.Checked;
+
+
+
+                //si es existente 
+            if (PlatoLocal.id != 0)
                 {
-                    MessageBox.Show("Datos insertados");
-                   // this.Close();
-
+                    negocio.modificarPlato(PlatoLocal);
                 }
-                else MessageBox.Show("No se han podido insertar los datos");
-                
-
-            }
-            else
-            {
-                string cadena = txtPrecioPla.Text;
-
-                string[] partes = cadena.Split(',');
-
-                if (sqlCar.Actualizar(idLabel.Text , txtNombrePla.Text , partes[0], comboBoxPla.Text, chktenedor.Checked.ToString(), chkCuchillo.Checked.ToString(), chkCuchara.Checked.ToString()))
+                // si es nuevo
+                else
                 {
-                    MessageBox.Show("Datos actualizados");
-                    this.Hide();
-                    //this.Close();
+                    negocio.agregarPlato(PlatoLocal);
                 }
-                else MessageBox.Show("No se han podido actualizar los datos");
-            }
+
+                Close();
+            
+        }
             
 
-        }
+        
 
         private void AltaPlato_Load(object sender, EventArgs e)
         {
-         
+            if (PlatoLocal != null)
+            {
+                txtNombrePla.Text = PlatoLocal.Nombre;
+                idLabel.Text = PlatoLocal.id.ToString();
+                txtPrecioPla.Text = PlatoLocal.Precio.ToString();
+                comboBoxPla.Text = PlatoLocal.Tipo.ToString();
+                chkCuchara.Checked = PlatoLocal.Cuchara;
+                chkCuchillo.Checked = PlatoLocal.Cuchillo;
+                chktenedor.Checked = PlatoLocal.Tenedor;
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void txtPrecioPla_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void txtNombrePla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
+    
 

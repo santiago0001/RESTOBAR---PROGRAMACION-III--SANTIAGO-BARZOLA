@@ -24,11 +24,42 @@ namespace WindowsFormsApp4
             InitializeComponent();
             InsumoLocal = insum;
         }
-
+        //aceptar
         private void button1_Click(object sender, EventArgs e)
-        {
+        { // cambiar color y avisar que no lleno campos
+            if (string.IsNullOrEmpty(txtNombre.Text)|| comboBox1.Text== "Seleccione tipo")
+            {
+                if (string.IsNullOrEmpty(txtNombre.Text) && comboBox1.Text == "Seleccione tipo")
+                {
+                    
+                    txtNombre.BackColor=Color.Salmon;
+                    comboBox1.BackColor = Color.Salmon;
+                    MessageBox.Show("Debe completar el nombre y el tipo de insumo");
+                }
+                else if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    txtNombre.BackColor = Color.Salmon;
+                    comboBox1.BackColor = Color.White;
+                    MessageBox.Show("Debe completar el nombre");
 
-            VajillaNegocio negocio = new VajillaNegocio();
+                }
+                else if (comboBox1.Text== "Seleccione tipo") {
+
+                    comboBox1.BackColor = Color.Salmon;
+                    txtNombre.BackColor = Color.White;
+                    MessageBox.Show("Debe completar el tipo de insumo");
+
+                }
+
+
+
+            }
+
+          
+
+        
+            else { 
+        VajillaNegocio negocio = new VajillaNegocio();
 
             // si es nuevo
             if (InsumoLocal == null)
@@ -57,8 +88,10 @@ namespace WindowsFormsApp4
             }
 
             Close();
+            }
         }
 
+        //Cargar form segun alta o modificacion
         private void AltaInsumo_Load(object sender, EventArgs e)
         {
             if (InsumoLocal != null)

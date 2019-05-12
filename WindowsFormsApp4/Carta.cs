@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AccesoDato;
+using AccesoDatos;
 using Dominio;
 using Negocio;
 
@@ -18,23 +18,43 @@ namespace WindowsFormsApp4
     
     public partial class Carta : Form
     {
-        AltaPlato plato = new AltaPlato();
-        AltaPlato platoMod = new AltaPlato();
-        SqlConsultas sql = new SqlConsultas();
-        
-
+       
         public Carta()
         {
             
             InitializeComponent();
         }
 
+        private List<Plato> listarPlatoLocal;
         private void Carta_Load(object sender, EventArgs e)
         {
-            dgb.DataSource = sql.MostrarDatos();
-            dgb.CurrentCell.Selected = false;
-          
-        }    
+            cargarGrilla();
+            this.dgvCarta.SelectionMode =
+            DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        void cargarGrilla()
+        {
+            // crea negocio para listar insumos
+            PlatoNegocio negocio = new PlatoNegocio();
+
+            try
+            { //lista insumos
+                listarPlatoLocal = negocio.listarPlatos();
+                dgvCarta.DataSource = listarPlatoLocal;
+                 dgvCarta.Columns[5].Visible = false;
+               // listarPlatoLocal.Columns[4].Visible = false;
+               // listarPlatoLocal.Columns[3].Visible = false;
+
+
+                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         { }
@@ -46,12 +66,7 @@ namespace WindowsFormsApp4
         {
 
            
-            DataGridViewRow fila = dgb.Rows[e.RowIndex];
-            platoMod.idLabel.Text = Convert.ToString(fila.Cells[0].Value);
-            platoMod.txtNombrePla.Text = Convert.ToString(fila.Cells[1].Value);
-            platoMod.txtPrecioPla.Text = Convert.ToString(fila.Cells[2].Value);
-            platoMod.comboBoxPla.Text = Convert.ToString(fila.Cells[3].Value);
-
+          
             
         }
 
@@ -67,19 +82,17 @@ namespace WindowsFormsApp4
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dgb.CurrentCell.ColumnIndex==0)
-            {
-                MessageBox.Show("No hay celdas seleccionadas!! Asegurece de seleccionar una celda.");
-            }
-            else { platoMod.Show(); }
-            
+            AltaPlato plato = new AltaPlato((Plato)dgvCarta.CurrentRow.DataBoundItem);
+            plato.ShowDialog();
+            cargarGrilla();
         }
 
         private void buttAdd_Click(object sender, EventArgs e)
         {
-            
-            
-            plato.Show();
+            AltaPlato plato = new AltaPlato();
+            plato.ShowDialog();
+            cargarGrilla();
+          
         }
 
         private void Carta_Deactivate(object sender, EventArgs e)
@@ -89,11 +102,23 @@ namespace WindowsFormsApp4
 
         private void butRefesh_Click(object sender, EventArgs e)
         {
-            dgb.DataSource = sql.MostrarDatos();
+            
         }
 
         private void dgb_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult resul = MessageBox.Show("Seguro que quiere eliminar?", "Eliminar Registro", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                PlatoNegocio negocio = new PlatoNegocio();
+                negocio.DeletePlato((Plato)dgvCarta.CurrentRow.DataBoundItem);
+                cargarGrilla();
+            }
 
         }
     }

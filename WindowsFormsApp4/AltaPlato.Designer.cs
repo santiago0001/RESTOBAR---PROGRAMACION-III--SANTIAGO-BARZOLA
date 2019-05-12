@@ -35,8 +35,8 @@
             this.chkCuchara = new System.Windows.Forms.CheckBox();
             this.txtNombrePla = new System.Windows.Forms.TextBox();
             this.txtPrecioPla = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Aceptar = new System.Windows.Forms.Button();
+            this.Cancelar = new System.Windows.Forms.Button();
             this.comboBoxPla = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -97,6 +97,7 @@
             this.txtNombrePla.Name = "txtNombrePla";
             this.txtNombrePla.Size = new System.Drawing.Size(100, 20);
             this.txtNombrePla.TabIndex = 6;
+            this.txtNombrePla.TextChanged += new System.EventHandler(this.txtNombrePla_TextChanged);
             // 
             // txtPrecioPla
             // 
@@ -106,25 +107,25 @@
             this.txtPrecioPla.TabIndex = 7;
             this.txtPrecioPla.TextChanged += new System.EventHandler(this.txtPrecioPla_TextChanged);
             // 
-            // button1
+            // Aceptar
             // 
-            this.button1.Location = new System.Drawing.Point(23, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Aceptar.Location = new System.Drawing.Point(23, 235);
+            this.Aceptar.Name = "Aceptar";
+            this.Aceptar.Size = new System.Drawing.Size(84, 35);
+            this.Aceptar.TabIndex = 8;
+            this.Aceptar.Text = "Aceptar";
+            this.Aceptar.UseVisualStyleBackColor = true;
+            this.Aceptar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(162, 235);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Cancelar.Location = new System.Drawing.Point(162, 235);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(92, 35);
+            this.Cancelar.TabIndex = 9;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBoxPla
             // 
@@ -164,9 +165,9 @@
             this.idLabel.AutoSize = true;
             this.idLabel.Location = new System.Drawing.Point(85, 7);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(37, 13);
+            this.idLabel.Size = new System.Drawing.Size(39, 13);
             this.idLabel.TabIndex = 13;
-            this.idLabel.Text = "nuevo";
+            this.idLabel.Text = "Nuevo";
             // 
             // AltaPlato
             // 
@@ -179,8 +180,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxPla);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Cancelar);
+            this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.txtPrecioPla);
             this.Controls.Add(this.txtNombrePla);
             this.Controls.Add(this.chkCuchara);
@@ -204,8 +205,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Aceptar;
+        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtNombrePla;
         public System.Windows.Forms.TextBox txtPrecioPla;

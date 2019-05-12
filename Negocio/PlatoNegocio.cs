@@ -24,7 +24,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select *From CARTA AS  R";
+                comando.CommandText = "select c.idplato,C.NOMBRE,C.PRECIO,C.TIPO,C.TENEDOR," +
+                    "C.CUCHILLO,C.CUCHARA From CARTA AS  C";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -32,9 +33,13 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Plato();
+                    nuevo.id = lector.GetInt32(0);
                     nuevo.Nombre = lector.GetString(1);
-                    nuevo.Precio = lector.GetInt32(0);
-                    nuevo.TipoPlato = lector.GetString(1);
+                    nuevo.Precio = lector.GetDecimal(2);
+                    nuevo.Tipo = lector.GetString(3);
+                    nuevo.Tenedor = lector.GetBoolean(4);
+                    nuevo.Cuchillo = lector.GetBoolean(5);
+                    nuevo.Cuchara = lector.GetBoolean(6);
 
 
                     //MSF-20190420: acá manejamos un posible nulo desde la DB. Recuerdan que la otra vez nos falló?
@@ -81,8 +86,8 @@ namespace Negocio
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
                 comando.CommandText = "INSERT INTO CARTA (NOMBRE,PRECIO,TIPO,TENEDOR,CUCHILLO,CUCHARA) values";
                comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Precio 
-               + ", '" + nuevo.TipoPlato + "', " + nuevo.Tenedor + ", " 
-               + nuevo.Cuchillo  +", " + nuevo.Cuchara;
+               + ", '" + nuevo.Tipo + "', '" + nuevo.Tenedor + "', '" 
+               + nuevo.Cuchillo  +"','" + nuevo.Cuchara+ "')";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -104,11 +109,18 @@ namespace Negocio
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
-
+                accesoDatos.setearConsulta("update carta Set Nombre=@Nombre, precio=@precio,tipo=@tipo, tenedor=@tenedor, cuchillo=@cuchillo, cuchara=@cuchara Where idplato=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
-                accesoDatos.Comando.Parameters.AddWithValue("@Debilidad", modificar.Precio);
-                accesoDatos.Comando.Parameters.AddWithValue("@UC", modificar.TipoPlato);
+                accesoDatos.Comando.Parameters.AddWithValue("@Tipo", modificar.Tipo);
+
+                accesoDatos.Comando.Parameters.AddWithValue("@precio", modificar.Precio);
+                accesoDatos.Comando.Parameters.AddWithValue("@tenedor", modificar.Tenedor);
+                accesoDatos.Comando.Parameters.AddWithValue("@cuchillo", modificar.Cuchillo);
+                accesoDatos.Comando.Parameters.AddWithValue("@cuchara", modificar.Cuchara);
+
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
 
             }
             catch (Exception ex)
@@ -120,6 +132,36 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public void DeletePlato(Plato nuevo)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
+                comando.CommandText = "Delete from carta where idplato=" + nuevo.id;
+                comando.Connection = conexion;
+                conexion.Open();
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
+
+
 
     }
 }

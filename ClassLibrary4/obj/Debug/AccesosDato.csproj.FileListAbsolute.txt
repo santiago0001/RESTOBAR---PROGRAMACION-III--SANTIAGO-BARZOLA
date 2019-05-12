@@ -34,3 +34,9 @@ C:\Users\canch\Desktop\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARAD
 C:\Users\canch\Desktop\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
 C:\Users\canch\Desktop\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\ClassLibrary4\obj\Debug\ClassLibrary4.dll
 C:\Users\canch\Desktop\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\TP-CUATRIMESTRAL-REPARADO-master\ClassLibrary4\obj\Debug\ClassLibrary4.pdb
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.dll
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.pdb
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csprojAssemblyReference.cache
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.dll
+C:\Users\canch\Downloads\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.pdb
