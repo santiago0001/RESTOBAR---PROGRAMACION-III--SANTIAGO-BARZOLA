@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp4
 {
-    partial class AltaInsumo
+    partial class AltaVajilla
     {
         /// <summary>
         /// Required designer variable.
@@ -34,17 +34,13 @@
             this.LabID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCant = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(31, 213);
+            this.Aceptar.Location = new System.Drawing.Point(31, 138);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(75, 23);
             this.Aceptar.TabIndex = 0;
@@ -54,7 +50,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(197, 213);
+            this.Cancelar.Location = new System.Drawing.Point(196, 138);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 1;
@@ -98,15 +94,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Cantidad";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Precio";
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(106, 48);
@@ -123,47 +110,13 @@
             this.txtCant.TabIndex = 8;
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(106, 130);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(130, 20);
-            this.txtPrecio.TabIndex = 9;
-            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Tipo de insumo";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Vajilla",
-            "Bebida",
-            "Materia prima"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.Text = "Seleccione tipo";
-            // 
             // AltaInsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 248);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPrecio);
+            this.ClientSize = new System.Drawing.Size(300, 184);
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LabID);
@@ -187,11 +140,7 @@
         private System.Windows.Forms.Label LabID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCant;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

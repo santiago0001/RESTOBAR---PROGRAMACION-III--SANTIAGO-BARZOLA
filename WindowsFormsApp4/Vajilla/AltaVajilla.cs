@@ -12,14 +12,14 @@ using Negocio;
 
 namespace WindowsFormsApp4
 {
-    public partial class AltaInsumo : Form
+    public partial class AltaVajilla : Form
     {
         private Insumo InsumoLocal = null;
-        public AltaInsumo()
+        public AltaVajilla()
         {
             InitializeComponent();
         }
-        public AltaInsumo(Insumo insum)
+        public AltaVajilla(Insumo insum)
         {
             InitializeComponent();
             InsumoLocal = insum;
@@ -27,33 +27,18 @@ namespace WindowsFormsApp4
         //aceptar
         private void button1_Click(object sender, EventArgs e)
         { // cambiar color y avisar que no lleno campos
-            if (string.IsNullOrEmpty(txtNombre.Text)|| comboBox1.Text== "Seleccione tipo")
-            {
-                if (string.IsNullOrEmpty(txtNombre.Text) && comboBox1.Text == "Seleccione tipo")
-                {
-                    
-                    txtNombre.BackColor=Color.Salmon;
-                    comboBox1.BackColor = Color.Salmon;
-                    MessageBox.Show("Debe completar el nombre y el tipo de insumo");
-                }
-                else if (string.IsNullOrEmpty(txtNombre.Text))
+          
+                if (string.IsNullOrEmpty(txtNombre.Text))
                 {
                     txtNombre.BackColor = Color.Salmon;
-                    comboBox1.BackColor = Color.White;
+                    
                     MessageBox.Show("Debe completar el nombre");
 
                 }
-                else if (comboBox1.Text== "Seleccione tipo") {
-
-                    comboBox1.BackColor = Color.Salmon;
-                    txtNombre.BackColor = Color.White;
-                    MessageBox.Show("Debe completar el tipo de insumo");
-
-                }
 
 
 
-            }
+            
 
           
 
@@ -64,17 +49,13 @@ namespace WindowsFormsApp4
             // si es nuevo
             if (InsumoLocal == null)
                 InsumoLocal = new Insumo();
-            if (txtPrecio.Text == "")
-            { txtPrecio.Text = "0"; }
 
             if (txtCant.Text == "")
             { txtCant.Text = "0"; }
 
-            // si es existente
+            
             InsumoLocal.Nombre = txtNombre.Text;
             InsumoLocal.Cantidad = Convert.ToInt32(txtCant.Text);
-            InsumoLocal.Precio = Convert.ToDecimal(txtPrecio.Text);
-            InsumoLocal.Tipo = comboBox1.Text;
 
             //si es existente 
             if (InsumoLocal.id != 0)
@@ -99,8 +80,6 @@ namespace WindowsFormsApp4
                 txtNombre.Text = InsumoLocal.Nombre;
                 LabID.Text = InsumoLocal.id.ToString();
                 txtCant.Text = InsumoLocal.Cantidad.ToString();
-                txtPrecio.Text = InsumoLocal.Precio.ToString();
-                comboBox1.Text = InsumoLocal.Tipo.ToString();
             }
         }
 

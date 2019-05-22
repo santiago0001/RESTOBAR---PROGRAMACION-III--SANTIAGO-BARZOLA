@@ -43,21 +43,9 @@ namespace WindowsFormsApp4
                 listarInsumoLocal = negocio.listarInsumos();
                 AdminVajillaView.DataSource = listarInsumoLocal;
                 AdminVajillaView.Columns[0].Visible = false;
-                AdminVajillaView.Columns[4].Visible = false;
-                AdminVajillaView.Columns[3].Visible = false;
 
                 
-                // filtra por combo box
-                if (comboBoxTipo.Text == "Seleccione tipo" || comboBoxTipo.Text == "Todos los insumos")
-                {   
-                    AdminVajillaView.DataSource = listarInsumoLocal;
-                }
-                else
-                {
-                    List<Insumo> lista;
-                    lista = listarInsumoLocal.FindAll(X => X.Tipo.Contains(comboBoxTipo.Text));
-                    AdminVajillaView.DataSource = lista;
-                }
+
             }
             catch (Exception ex)
             {
@@ -75,10 +63,9 @@ namespace WindowsFormsApp4
                 listarInsumoLocal = negocio.listarInsumos();
                 AdminVajillaView.DataSource = listarInsumoLocal;
                 AdminVajillaView.Columns[0].Visible = false;
-                AdminVajillaView.Columns[4].Visible = false;
-                AdminVajillaView.Columns[3].Visible = false;
-                comboBoxTipo.Text = "Seleccione tipo";
-                List <Insumo> lista;
+
+
+                List<Insumo> lista;
                     lista = listarInsumoLocal.FindAll(X => X.Nombre.ToUpper().Contains(busqueda.ToUpper()));
                     AdminVajillaView.DataSource = lista;
                 
@@ -92,14 +79,14 @@ namespace WindowsFormsApp4
         private void button1_Click(object sender, EventArgs e)
         {
 
-            AltaInsumo insumo = new AltaInsumo();
+            AltaVajilla insumo = new AltaVajilla();
             insumo.ShowDialog();
             cargarGrilla();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AltaInsumo modificar = new AltaInsumo((Insumo)AdminVajillaView.CurrentRow.DataBoundItem);
+            AltaVajilla modificar = new AltaVajilla((Insumo)AdminVajillaView.CurrentRow.DataBoundItem);
             modificar.ShowDialog();
             cargarGrilla();
             

@@ -8,12 +8,12 @@ namespace Dominio
 {
     public class Insumo
     {
-        public int id { get; set; }
+        public Int64 id { get; set; }
         
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
-        public string Tipo { get; set; }
-        public Decimal Precio { get; set; }
+
+        
                
     }
 }

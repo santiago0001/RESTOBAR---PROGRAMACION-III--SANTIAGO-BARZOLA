@@ -26,7 +26,7 @@ namespace Negocio
                     conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                     comando.CommandType = System.Data.CommandType.Text;
                     //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
-                    comando.CommandText = "select  V.ID,V.NOMBRE, V.CANTIDAD,V.PRECIO,V.TIPO From VAJILLA as V";
+                    comando.CommandText = "select  V.ID,V.NOMBRE, V.CANTIDAD From VAJILLA as V";
                     comando.Connection = conexion;
                     conexion.Open();
                     lector = comando.ExecuteReader();
@@ -36,9 +36,7 @@ namespace Negocio
                         nuevo = new Insumo();
                     nuevo.id = lector.GetInt32(0);                                   
                     nuevo.Nombre = lector.GetString(1);
-                    nuevo.Cantidad = lector.GetInt32(2);
-                   nuevo.Precio = lector.GetDecimal(3);
-                    nuevo.Tipo = lector.GetString(4);
+
 
 
 
@@ -49,8 +47,10 @@ namespace Negocio
                     //que sean nulleables. Solo a esa deberían agregarles ésta validación. Que de hecho pueden meter en un método
                     //para no tener que escribirla completa cada vez, por ejemplo.
 
-                   // if (!Convert.IsDBNull(lector["Tipo"]))
-                        
+                    if (!Convert.IsDBNull(lector["Cantidad"]))
+                        nuevo.Cantidad = lector.GetInt32(2);
+
+
                     //  if (!Convert.IsDBNull(lector["Precio"]))
                     //      nuevo.Precio = lector.GetDecimal(3);
 
@@ -81,8 +81,8 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "insert into VAJILLA (Nombre, Cantidad, Precio,tipo) values";
-                comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Cantidad + ", " + nuevo.Precio + ", '"+ nuevo.Tipo+ "')";
+                comando.CommandText = "insert into VAJILLA (Nombre, Cantidad) values";
+                comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Cantidad + ")";
                     comando.Connection = conexion;
                     conexion.Open();
 
@@ -105,12 +105,11 @@ namespace Negocio
                 try
                 {
 
-                accesoDatos.setearConsulta("update vajilla Set Nombre=@Nombre, cantidad=@cantidad, precio=@precio, tipo=@tipo Where Id=" + modificar.id.ToString());
+                accesoDatos.setearConsulta("update vajilla Set Nombre=@Nombre, cantidad=@cantidad Where Id=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
                 accesoDatos.Comando.Parameters.AddWithValue("@cantidad", modificar.Cantidad);
-                accesoDatos.Comando.Parameters.AddWithValue("@precio", modificar.Precio);
-                accesoDatos.Comando.Parameters.AddWithValue("@tipo", modificar.Tipo);
+
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
 

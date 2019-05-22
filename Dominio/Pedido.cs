@@ -8,7 +8,7 @@ namespace Dominio
 {
     class Pedido
     {
-        public Bebida Bebida { get; set; }
+        public Marca Bebida { get; set; }
         public Plato  Plato { get; set; }
         public Decimal Total { get; set; }
     }

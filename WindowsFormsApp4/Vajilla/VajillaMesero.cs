@@ -15,10 +15,10 @@ using Negocio;
 
 namespace WindowsFormsApp4
 {
-    public partial class Vajilla : Form
+    public partial class VajillaMesero : Form
     {
         private List<Insumo> ListaInsumoLocal;
-        public Vajilla()
+        public VajillaMesero()
         {
             InitializeComponent();
         }
@@ -58,7 +58,7 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaInsumo insumo = new AltaInsumo();
+            AltaVajilla insumo = new AltaVajilla();
             insumo.ShowDialog();
             cargarGrilla();
         }

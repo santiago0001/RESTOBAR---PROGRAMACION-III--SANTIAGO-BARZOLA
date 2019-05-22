@@ -33,7 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
             this.ButBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AdminVajillaView)).BeginInit();
             this.SuspendLayout();
@@ -56,11 +55,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 14);
+            this.label1.Location = new System.Drawing.Point(134, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 31);
+            this.label1.Size = new System.Drawing.Size(93, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Insumos";
+            this.label1.Text = "Vajilla";
             // 
             // button1
             // 
@@ -92,22 +91,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBoxTipo
-            // 
-            this.comboBoxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Items.AddRange(new object[] {
-            "Vajilla",
-            "Bebida",
-            "Materia prima",
-            "Todos los insumos"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(163, 17);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(187, 28);
-            this.comboBoxTipo.TabIndex = 5;
-            this.comboBoxTipo.Text = "Seleccione tipo";
-            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // ButBuscar
             // 
             this.ButBuscar.Location = new System.Drawing.Point(282, 415);
@@ -118,21 +101,20 @@
             this.ButBuscar.UseVisualStyleBackColor = true;
             this.ButBuscar.Click += new System.EventHandler(this.ButBuscar_Click);
             // 
-            // AdminVajilla
+            // AdminInsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 448);
             this.Controls.Add(this.ButBuscar);
-            this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AdminVajillaView);
-            this.Name = "AdminVajilla";
+            this.Name = "AdminInsumo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminVajilla";
+            this.Text = "Administracion de vajilla";
             this.Load += new System.EventHandler(this.AdminVajilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminVajillaView)).EndInit();
             this.ResumeLayout(false);
@@ -147,6 +129,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button ButBuscar;
         private System.Windows.Forms.DataGridView AdminVajillaView;
-        public System.Windows.Forms.ComboBox comboBoxTipo;
     }
 }

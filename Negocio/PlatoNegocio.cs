@@ -37,9 +37,7 @@ namespace Negocio
                     nuevo.Nombre = lector.GetString(1);
                     nuevo.Precio = lector.GetDecimal(2);
                     nuevo.Tipo = lector.GetString(3);
-                    nuevo.Tenedor = lector.GetBoolean(4);
-                    nuevo.Cuchillo = lector.GetBoolean(5);
-                    nuevo.Cuchara = lector.GetBoolean(6);
+
 
 
                     //MSF-20190420: acá manejamos un posible nulo desde la DB. Recuerdan que la otra vez nos falló?
@@ -84,10 +82,8 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "INSERT INTO CARTA (NOMBRE,PRECIO,TIPO,TENEDOR,CUCHILLO,CUCHARA) values";
-               comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Precio 
-               + ", '" + nuevo.Tipo + "', '" + nuevo.Tenedor + "', '" 
-               + nuevo.Cuchillo  +"','" + nuevo.Cuchara+ "')";
+                comando.CommandText = "INSERT INTO CARTA (NOMBRE,cantidad) values";
+               comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Cantidad +")";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -115,9 +111,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@Tipo", modificar.Tipo);
 
                 accesoDatos.Comando.Parameters.AddWithValue("@precio", modificar.Precio);
-                accesoDatos.Comando.Parameters.AddWithValue("@tenedor", modificar.Tenedor);
-                accesoDatos.Comando.Parameters.AddWithValue("@cuchillo", modificar.Cuchillo);
-                accesoDatos.Comando.Parameters.AddWithValue("@cuchara", modificar.Cuchara);
+
 
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();

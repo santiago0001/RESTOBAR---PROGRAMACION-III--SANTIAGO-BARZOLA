@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp4.Bebidas;
 
 namespace WindowsFormsApp4
 {
@@ -52,7 +53,7 @@ namespace WindowsFormsApp4
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Vajilla frm = new Vajilla();
+            VajillaMesero frm = new VajillaMesero();
             frm.Show();
         }
 
@@ -67,6 +68,12 @@ namespace WindowsFormsApp4
             
             Cobro frm = new Cobro();
             frm.Show();
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            AdminBebidas BebidasForm = new AdminBebidas();
+            BebidasForm.ShowDialog();
         }
     }
     }

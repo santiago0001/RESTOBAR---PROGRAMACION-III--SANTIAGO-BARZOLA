@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp4
 {
-    partial class Vajilla
+    partial class VajillaMesero
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,7 @@
             this.butAdd.UseVisualStyleBackColor = true;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
-            // Vajilla
+            // VajillaMesero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +107,7 @@
             this.Controls.Add(this.vajilladata);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "Vajilla";
+            this.Name = "VajillaMesero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vajilla";
             this.Load += new System.EventHandler(this.Vajilla_Load);

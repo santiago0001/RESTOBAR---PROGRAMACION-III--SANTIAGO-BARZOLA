@@ -84,3 +84,14 @@ C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\o
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.dll
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\Negocio.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\Negocio.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\ClassLibrary4.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\Dominio.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\ClassLibrary4.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\bin\Debug\Dominio.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Negocio\obj\Debug\Negocio.pdb

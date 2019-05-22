@@ -37,3 +37,9 @@ C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\o
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.dll
 C:\Users\canch\Documents\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\bin\Debug\Dominio.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\bin\Debug\Dominio.pdb
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.dll
+C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Dominio\obj\Debug\Dominio.pdb

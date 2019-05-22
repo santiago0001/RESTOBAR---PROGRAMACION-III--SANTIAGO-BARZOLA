@@ -46,52 +46,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminVajilla.cs">
+    <Compile Include="Bebidas\ABMmarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminVajilla.Designer.cs">
+    <Compile Include="Bebidas\ABMmarcas.Designer.cs">
+      <DependentUpon>ABMmarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bebidas\AdminBebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bebidas\AdminBebidas.Designer.cs">
+      <DependentUpon>AdminBebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bebidas\AltaBebida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bebidas\AltaBebida.Designer.cs">
+      <DependentUpon>AltaBebida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bebidas\Papelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bebidas\Papelera.Designer.cs">
+      <DependentUpon>Papelera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vajilla\AdminVajilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vajilla\AdminVajilla.Designer.cs">
       <DependentUpon>AdminVajilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaInsumo.cs">
+    <Compile Include="Vajilla\AltaVajilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaInsumo.Designer.cs">
-      <DependentUpon>AltaInsumo.cs</DependentUpon>
+    <Compile Include="Vajilla\AltaVajilla.Designer.cs">
+      <DependentUpon>AltaVajilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaPlato.cs">
+    <Compile Include="Platos\AltaPlato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaPlato.Designer.cs">
+    <Compile Include="Platos\AltaPlato.Designer.cs">
       <DependentUpon>AltaPlato.cs</DependentUpon>
     </Compile>
-    <Compile Include="Asignacion.cs">
+    <Compile Include="otros\Asignacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Asignacion.Designer.cs">
+    <Compile Include="otros\Asignacion.Designer.cs">
       <DependentUpon>Asignacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Buscar.cs">
+    <Compile Include="Vajilla\Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buscar.Designer.cs">
+    <Compile Include="Vajilla\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CargaPedido.cs">
+    <Compile Include="otros\CargaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CargaPedido.Designer.cs">
+    <Compile Include="otros\CargaPedido.Designer.cs">
       <DependentUpon>CargaPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carta.cs">
+    <Compile Include="Platos\Carta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carta.Designer.cs">
+    <Compile Include="Platos\Carta.Designer.cs">
       <DependentUpon>Carta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cobro.cs">
+    <Compile Include="otros\Cobro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cobro.Designer.cs">
+    <Compile Include="otros\Cobro.Designer.cs">
       <DependentUpon>Cobro.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
@@ -100,63 +124,75 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MesasAdmin.cs">
+    <Compile Include="otros\MesasAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MesasAdmin.Designer.cs">
+    <Compile Include="otros\MesasAdmin.Designer.cs">
       <DependentUpon>MesasAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarSalones.cs">
+    <Compile Include="otros\ModificarSalones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarSalones.Designer.cs">
+    <Compile Include="otros\ModificarSalones.Designer.cs">
       <DependentUpon>ModificarSalones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Salones.cs">
+    <Compile Include="otros\Salones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Salones.Designer.cs">
+    <Compile Include="otros\Salones.Designer.cs">
       <DependentUpon>Salones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vajilla.cs">
+    <Compile Include="Vajilla\VajillaMesero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vajilla.Designer.cs">
-      <DependentUpon>Vajilla.cs</DependentUpon>
+    <Compile Include="Vajilla\VajillaMesero.Designer.cs">
+      <DependentUpon>VajillaMesero.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminVajilla.resx">
+    <EmbeddedResource Include="Bebidas\ABMmarcas.resx">
+      <DependentUpon>ABMmarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bebidas\AdminBebidas.resx">
+      <DependentUpon>AdminBebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bebidas\AltaBebida.resx">
+      <DependentUpon>AltaBebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bebidas\Papelera.resx">
+      <DependentUpon>Papelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vajilla\AdminVajilla.resx">
       <DependentUpon>AdminVajilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaInsumo.resx">
-      <DependentUpon>AltaInsumo.cs</DependentUpon>
+    <EmbeddedResource Include="Vajilla\AltaVajilla.resx">
+      <DependentUpon>AltaVajilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaPlato.resx">
+    <EmbeddedResource Include="Platos\AltaPlato.resx">
       <DependentUpon>AltaPlato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Asignacion.resx">
+    <EmbeddedResource Include="otros\Asignacion.resx">
       <DependentUpon>Asignacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buscar.resx">
+    <EmbeddedResource Include="Vajilla\Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CargaPedido.resx">
+    <EmbeddedResource Include="otros\CargaPedido.resx">
       <DependentUpon>CargaPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Carta.resx">
+    <EmbeddedResource Include="Platos\Carta.resx">
       <DependentUpon>Carta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cobro.resx">
+    <EmbeddedResource Include="otros\Cobro.resx">
       <DependentUpon>Cobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MesasAdmin.resx">
+    <EmbeddedResource Include="otros\MesasAdmin.resx">
       <DependentUpon>MesasAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarSalones.resx">
+    <EmbeddedResource Include="otros\ModificarSalones.resx">
       <DependentUpon>ModificarSalones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -168,11 +204,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Salones.resx">
+    <EmbeddedResource Include="otros\Salones.resx">
       <DependentUpon>Salones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vajilla.resx">
-      <DependentUpon>Vajilla.cs</DependentUpon>
+    <EmbeddedResource Include="Vajilla\VajillaMesero.resx">
+      <DependentUpon>VajillaMesero.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

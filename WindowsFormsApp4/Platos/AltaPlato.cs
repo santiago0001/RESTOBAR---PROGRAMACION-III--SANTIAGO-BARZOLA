@@ -42,9 +42,7 @@ namespace Negocio
                 PlatoLocal.Nombre = txtNombrePla.Text;
                 PlatoLocal.Precio = Convert.ToDecimal(txtPrecioPla.Text);
                 PlatoLocal.Tipo = comboBoxPla.Text;
-            PlatoLocal.Tenedor = chktenedor.Checked;
-            PlatoLocal.Cuchara = chkCuchara.Checked;
-            PlatoLocal.Cuchillo = chkCuchillo.Checked;
+
 
 
 
@@ -74,9 +72,7 @@ namespace Negocio
                 idLabel.Text = PlatoLocal.id.ToString();
                 txtPrecioPla.Text = PlatoLocal.Precio.ToString();
                 comboBoxPla.Text = PlatoLocal.Tipo.ToString();
-                chkCuchara.Checked = PlatoLocal.Cuchara;
-                chkCuchillo.Checked = PlatoLocal.Cuchillo;
-                chktenedor.Checked = PlatoLocal.Tenedor;
+ 
 
             }
         }
