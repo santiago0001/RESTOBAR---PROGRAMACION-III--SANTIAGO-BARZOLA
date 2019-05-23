@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AccesoDatos;
 using Dominio;
 using Negocio;
+using WindowsFormsApp4.Bebidas;
 using System.Data.SqlClient;
 
 namespace WindowsFormsApp4
@@ -43,8 +44,11 @@ namespace WindowsFormsApp4
                 listarInsumoLocal = negocio.listarInsumos();
                 AdminVajillaView.DataSource = listarInsumoLocal;
                 AdminVajillaView.Columns[0].Visible = false;
+                AdminVajillaView.Columns["estado"].Visible = false;
+                AdminVajillaView.Columns["Nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
 
-                
+
+
 
             }
             catch (Exception ex)
@@ -63,6 +67,9 @@ namespace WindowsFormsApp4
                 listarInsumoLocal = negocio.listarInsumos();
                 AdminVajillaView.DataSource = listarInsumoLocal;
                 AdminVajillaView.Columns[0].Visible = false;
+                AdminVajillaView.Columns["estado"].Visible = false;
+                AdminVajillaView.Columns["Nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
+
 
 
                 List<Insumo> lista;
@@ -111,10 +118,17 @@ namespace WindowsFormsApp4
 
         void ButBuscar_Click(object sender, EventArgs e)
         {
-            Buscar search = new Buscar();
+            Buscar search = new Buscar("vajilla");
             search.ShowDialog();
+            cargarGrilla();
             
-            
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Papelera pap = new Papelera("vajilla");
+            pap.ShowDialog();
+            cargarGrilla();
         }
     }
 }

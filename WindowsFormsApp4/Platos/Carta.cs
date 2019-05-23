@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using AccesoDatos;
+using WindowsFormsApp4.Bebidas;
 using Dominio;
 using Negocio;
 
@@ -42,7 +43,6 @@ namespace WindowsFormsApp4
             { //lista insumos
                 listarPlatoLocal = negocio.listarPlatos();
                 dgvCarta.DataSource = listarPlatoLocal;
-                 dgvCarta.Columns[5].Visible = false;
                // listarPlatoLocal.Columns[4].Visible = false;
                // listarPlatoLocal.Columns[3].Visible = false;
 
@@ -120,6 +120,13 @@ namespace WindowsFormsApp4
                 cargarGrilla();
             }
 
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Papelera pap = new Papelera("plato");
+            pap.ShowDialog();
+            cargarGrilla();
         }
     }
 

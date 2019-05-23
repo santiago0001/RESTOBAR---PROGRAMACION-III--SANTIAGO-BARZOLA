@@ -9,31 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using WindowsFormsApp4.Bebidas;
 
 namespace WindowsFormsApp4
 {
     public partial class Buscar : Form
     {
-        public Buscar()
+        string Clave;
+        public Buscar(string clave)
         {
             InitializeComponent();
+            Clave = clave;
         }
-       
-        public List<Insumo> BusquedaInsumos(List<Insumo> listarInsumoLocal)
-        {
-            if (Searchtxt.Text == "")
-            {
-                return listarInsumoLocal;
-            }
-            else
-            {
-                List<Insumo> lista;
-                lista = listarInsumoLocal.FindAll(X => X.Nombre.Contains(Searchtxt.Text));
-                listarInsumoLocal = lista;
-            }
-
-            return listarInsumoLocal;
-        }
+      
        
         private void Buscar_Load(object sender, EventArgs e)
         {
@@ -50,9 +38,18 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Clave == "vajilla") { 
             AdminVajilla f1 = Application.OpenForms.OfType<AdminVajilla>().SingleOrDefault();
 
             f1.cargarGrillaVajilla(Searchtxt.Text);
+            }
+            if (Clave=="bebida")
+            {
+                AdminBebidas f1 = Application.OpenForms.OfType<AdminBebidas>().SingleOrDefault();
+
+                f1.cargarGrilla(Searchtxt.Text);
+            }
+
         }
 
         private void Buscar_KeyDown(object sender, KeyEventArgs e)

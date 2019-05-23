@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Insumo
+   public class TipoPlato
     {
         public Int64 id { get; set; }
-        
-        public string Nombre { get; set; }
-        public int Cantidad { get; set; }
-        public Boolean Estado { get; set; }
+        public string nombre { get; set; }
 
-
-
+        public override string ToString()
+        {
+            return nombre;
+        }
     }
 }

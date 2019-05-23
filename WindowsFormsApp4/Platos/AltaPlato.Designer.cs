@@ -30,9 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chktenedor = new System.Windows.Forms.CheckBox();
-            this.chkCuchillo = new System.Windows.Forms.CheckBox();
-            this.chkCuchara = new System.Windows.Forms.CheckBox();
             this.txtNombrePla = new System.Windows.Forms.TextBox();
             this.txtPrecioPla = new System.Windows.Forms.TextBox();
             this.Aceptar = new System.Windows.Forms.Button();
@@ -41,6 +38,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -55,45 +61,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 79);
+            this.label2.Location = new System.Drawing.Point(31, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Precio";
             // 
-            // chktenedor
-            // 
-            this.chktenedor.AutoSize = true;
-            this.chktenedor.Location = new System.Drawing.Point(31, 166);
-            this.chktenedor.Name = "chktenedor";
-            this.chktenedor.Size = new System.Drawing.Size(66, 17);
-            this.chktenedor.TabIndex = 3;
-            this.chktenedor.Text = "Tenedor";
-            this.chktenedor.UseVisualStyleBackColor = true;
-            // 
-            // chkCuchillo
-            // 
-            this.chkCuchillo.AutoSize = true;
-            this.chkCuchillo.Location = new System.Drawing.Point(31, 189);
-            this.chkCuchillo.Name = "chkCuchillo";
-            this.chkCuchillo.Size = new System.Drawing.Size(63, 17);
-            this.chkCuchillo.TabIndex = 4;
-            this.chkCuchillo.Text = "Cuchillo";
-            this.chkCuchillo.UseVisualStyleBackColor = true;
-            // 
-            // chkCuchara
-            // 
-            this.chkCuchara.AutoSize = true;
-            this.chkCuchara.Location = new System.Drawing.Point(31, 212);
-            this.chkCuchara.Name = "chkCuchara";
-            this.chkCuchara.Size = new System.Drawing.Size(66, 17);
-            this.chkCuchara.TabIndex = 5;
-            this.chkCuchara.Text = "Cuchara";
-            this.chkCuchara.UseVisualStyleBackColor = true;
-            // 
             // txtNombrePla
             // 
-            this.txtNombrePla.Location = new System.Drawing.Point(88, 34);
+            this.txtNombrePla.Location = new System.Drawing.Point(100, 34);
             this.txtNombrePla.Name = "txtNombrePla";
             this.txtNombrePla.Size = new System.Drawing.Size(100, 20);
             this.txtNombrePla.TabIndex = 6;
@@ -101,7 +77,7 @@
             // 
             // txtPrecioPla
             // 
-            this.txtPrecioPla.Location = new System.Drawing.Point(88, 76);
+            this.txtPrecioPla.Location = new System.Drawing.Point(100, 79);
             this.txtPrecioPla.Name = "txtPrecioPla";
             this.txtPrecioPla.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioPla.TabIndex = 7;
@@ -109,7 +85,7 @@
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(23, 235);
+            this.Aceptar.Location = new System.Drawing.Point(10, 361);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(84, 35);
             this.Aceptar.TabIndex = 8;
@@ -119,7 +95,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(162, 235);
+            this.Cancelar.Location = new System.Drawing.Point(108, 361);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(92, 35);
             this.Cancelar.TabIndex = 9;
@@ -136,7 +112,7 @@
             "Postre",
             "Bebida",
             "Otros"});
-            this.comboBoxPla.Location = new System.Drawing.Point(106, 123);
+            this.comboBoxPla.Location = new System.Drawing.Point(100, 123);
             this.comboBoxPla.Name = "comboBoxPla";
             this.comboBoxPla.Size = new System.Drawing.Size(148, 21);
             this.comboBoxPla.TabIndex = 10;
@@ -145,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 126);
+            this.label3.Location = new System.Drawing.Point(25, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 11;
@@ -169,13 +145,82 @@
             this.idLabel.TabIndex = 13;
             this.idLabel.Text = "Nuevo";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(251, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Descripcion";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(254, 34);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 48);
+            this.textBox1.TabIndex = 15;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 123);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(384, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(257, 130);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Eliminar ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(257, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 167);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(469, 188);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Vajillas por plato";
+            // 
             // AltaPlato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(294, 282);
+            this.ClientSize = new System.Drawing.Size(532, 407);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -184,9 +229,6 @@
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.txtPrecioPla);
             this.Controls.Add(this.txtNombrePla);
-            this.Controls.Add(this.chkCuchara);
-            this.Controls.Add(this.chkCuchillo);
-            this.Controls.Add(this.chktenedor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -196,6 +238,8 @@
             this.Text = "Agregado de plato";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AltaPlato_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,10 +255,14 @@
         public System.Windows.Forms.TextBox txtNombrePla;
         public System.Windows.Forms.TextBox txtPrecioPla;
         public System.Windows.Forms.ComboBox comboBoxPla;
-        public System.Windows.Forms.CheckBox chktenedor;
-        public System.Windows.Forms.CheckBox chkCuchillo;
-        public System.Windows.Forms.CheckBox chkCuchara;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

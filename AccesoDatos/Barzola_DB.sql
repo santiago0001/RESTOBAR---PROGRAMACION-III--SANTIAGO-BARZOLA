@@ -170,3 +170,17 @@ CREATE view View_marca
 as select b.NOMBRE as nombre_bebida, b.PRECIO,
 b.ID, b.ESTADO,b.DESCRIPCION,b.COPA,b.CANTIDAD,m.NOMBRE as marca, m.ID as marcaid from BEBIDA as b
 inner join MARCA as M on m.ID=b.IDMARCA
+
+alter view view_platos
+as select p.id,p.NOMBRE,p.PRECIO,p.TIPO as idtipo,tp.NOMBRE as Tipo,p.ESTADO,p.DESCRIPCION from PLATO as p
+inner join TIPO_PLATO as tp on tp.ID=p.TIPO
+
+select *from view_platos
+
+create view view_vajillaXplato
+as select vp.IDPLATO,v.NOMBRE  from VAJILLAXPLATO as vp
+inner join VAJILLA as v on v.ID=vp.IDVAJILLA
+
+select *from view_vajillaXplato
+
+select *from TIPO_PLATO

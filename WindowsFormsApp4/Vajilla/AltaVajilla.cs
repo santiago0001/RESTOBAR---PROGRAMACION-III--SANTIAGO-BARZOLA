@@ -36,13 +36,9 @@ namespace WindowsFormsApp4
 
                 }
 
+    
 
 
-            
-
-          
-
-        
             else { 
         VajillaNegocio negocio = new VajillaNegocio();
 

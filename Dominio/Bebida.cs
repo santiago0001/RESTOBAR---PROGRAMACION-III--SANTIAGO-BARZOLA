@@ -14,7 +14,7 @@ namespace Dominio
         public string Descripcion { get; set; }
         public bool Copa { get; set; }
         public Marca marca { get; set; }
-        public bool Estado { get; set; }
+       // public bool Estado { get; set; }
 
 
     }

@@ -47,6 +47,7 @@ namespace WindowsFormsApp4.Bebidas
                 DgvBebidas.Columns["nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
                 DgvBebidas.Columns["descripcion"].DisplayIndex = 1;
                 DgvBebidas.Columns["descripcion"].Width = 170;
+                DgvBebidas.Columns["precio"].Visible = false;
 
                 DgvBebidas.Columns["marca"].DisplayIndex = 2;
                 DgvBebidas.Columns["precio"].DisplayIndex = 3;
@@ -69,6 +70,47 @@ namespace WindowsFormsApp4.Bebidas
             }
         }
 
+     public   void cargarGrilla(string busqueda)
+        {
+            // crea negocio para listar insumos
+
+            try
+            { //lista insumos
+                listarBebidaLocal = negocio.listarBebidas();
+                DgvBebidas.DataSource = listarBebidaLocal;
+                //Ocultar columnas
+                DgvBebidas.Columns["id"].Visible = false;
+                DgvBebidas.Columns["Estado"].Visible = false;
+                DgvBebidas.Columns["copa"].Visible = false;
+                DgvBebidas.Columns["nombre"].DisplayIndex = 0;
+                DgvBebidas.Columns["nombre"].Width = 140;
+                DgvBebidas.Columns["nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
+                DgvBebidas.Columns["descripcion"].DisplayIndex = 1;
+                DgvBebidas.Columns["descripcion"].Width = 170;
+                DgvBebidas.Columns["precio"].Visible = false;
+
+                DgvBebidas.Columns["marca"].DisplayIndex = 2;
+                DgvBebidas.Columns["precio"].DisplayIndex = 3;
+                DgvBebidas.Columns["cantidad"].DisplayIndex = 4;
+
+
+
+                List<Bebida> lista;
+                lista = listarBebidaLocal.FindAll(X => X.Nombre.ToUpper().Contains(busqueda.ToUpper()));
+                DgvBebidas.DataSource = lista;
+
+
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
 
         private void DgvBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -117,6 +159,13 @@ namespace WindowsFormsApp4.Bebidas
         {
             Papelera eliminados = new Papelera("bebida");
             eliminados.ShowDialog();
+            cargarGrilla();
+        }
+
+        private void BotBus_Click(object sender, EventArgs e)
+        {
+            Buscar bus = new Buscar("bebida");
+            bus.ShowDialog();
             cargarGrilla();
         }
     }

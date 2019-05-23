@@ -102,6 +102,7 @@
             this.BotBus.TabIndex = 5;
             this.BotBus.Text = "Buscar";
             this.BotBus.UseVisualStyleBackColor = true;
+            this.BotBus.Click += new System.EventHandler(this.BotBus_Click);
             // 
             // DeletePic
             // 

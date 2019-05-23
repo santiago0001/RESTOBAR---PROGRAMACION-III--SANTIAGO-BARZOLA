@@ -41,7 +41,7 @@ namespace Negocio
                 // si es existente
                 PlatoLocal.Nombre = txtNombrePla.Text;
                 PlatoLocal.Precio = Convert.ToDecimal(txtPrecioPla.Text);
-                PlatoLocal.Tipo = comboBoxPla.Text;
+               // PlatoLocal.Tipo = comboBoxPla.Text;
 
 
 
@@ -88,6 +88,11 @@ namespace Negocio
         }
 
         private void txtNombrePla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
