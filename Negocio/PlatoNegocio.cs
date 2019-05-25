@@ -144,8 +144,9 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "INSERT INTO CARTA (NOMBRE,cantidad) values";
-               comando.CommandText += "('" + nuevo.Nombre + "', " + nuevo.Cantidad +")";
+                comando.CommandText = "INSERT INTO plato (NOMBRE,descripcion,tipo,precio,estado) values";
+               comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Descripcion +"'," + nuevo.Tipo.id +  
+                    ","+nuevo.Precio+ ",1 )";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -167,11 +168,11 @@ namespace Negocio
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
-                accesoDatos.setearConsulta("update carta Set Nombre=@Nombre, precio=@precio,tipo=@tipo, tenedor=@tenedor, cuchillo=@cuchillo, cuchara=@cuchara Where idplato=" + modificar.id.ToString());
+                accesoDatos.setearConsulta("update plato Set Nombre=@Nombre, precio=@precio,tipo=@tipo, descripcion=@descripcion Where id=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
-                accesoDatos.Comando.Parameters.AddWithValue("@Tipo", modificar.Tipo);
-
+                accesoDatos.Comando.Parameters.AddWithValue("@Tipo", modificar.Tipo.id);
+                accesoDatos.Comando.Parameters.AddWithValue("@descripcion", modificar.Descripcion);
                 accesoDatos.Comando.Parameters.AddWithValue("@precio", modificar.Precio);
 
 

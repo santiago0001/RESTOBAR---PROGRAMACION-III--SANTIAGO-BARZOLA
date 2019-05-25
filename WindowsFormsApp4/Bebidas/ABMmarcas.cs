@@ -44,7 +44,6 @@ namespace WindowsFormsApp4.Bebidas
                 MarcaLocal.Nombre = txtmar.Text;
                 MarcaLocal.Estado = true;
                 negocio.agregarMarca(MarcaLocal);
-                cargarGrilla();
             
             }
 
@@ -52,15 +51,15 @@ namespace WindowsFormsApp4.Bebidas
             {
                 TipoLocal.nombre = txtmar.Text;
                 TipoLocal.estado = true;
-                negocioTipo.agregarMarca(TipoLocal);
-                cargarGrilla();
+                negocioTipo.agregarTipo(TipoLocal);
 
             }
 
+            cargarGrilla();
 
-            }
+        }
 
-            private void ABMmarcas_Load(object sender, EventArgs e)
+        private void ABMmarcas_Load(object sender, EventArgs e)
         {
             if (Clave == "tipo")
             {
@@ -92,8 +91,8 @@ namespace WindowsFormsApp4.Bebidas
                     listarTipoLocal = negocioTipo.listarTipoPlato();
                     dgvMarcas.DataSource = listarTipoLocal;
                     //Ocultar columnas
-                   // dgvMarcas.Columns[0].Visible = false;
-                   // dgvMarcas.Columns["estado"].Visible = false;
+                    dgvMarcas.Columns[0].Visible = false;
+                    dgvMarcas.Columns["estado"].Visible = false;
                 }
 
 
@@ -107,15 +106,34 @@ namespace WindowsFormsApp4.Bebidas
 
         private void DgvMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            marcaselec = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            if (Clave == "marca") { 
+                marcaselec = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
             txtmodi.Text = marcaselec.Nombre;
+            }
+
+            if (Clave == "tipo")
+            {
+                tipoaselec = (TipoPlato)dgvMarcas.CurrentRow.DataBoundItem;
+                txtmodi.Text = tipoaselec.nombre;
+
+            }
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            marcaselec.Nombre = txtmodi.Text;
-            negocio.modificarMarca(marcaselec);
+            if (Clave == "marca")
+            {
+
+                marcaselec.Nombre = txtmodi.Text;
+                negocio.modificarMarca(marcaselec);
+            }
+            if (Clave == "tipo")
+            {
+                tipoaselec.nombre = txtmodi.Text;
+                negocioTipo.modificarTipo(tipoaselec);
+
+            }
             cargarGrilla();
 
 
@@ -123,14 +141,25 @@ namespace WindowsFormsApp4.Bebidas
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Papelera pap = new Papelera("marca");
+        
+
+                Papelera pap = new Papelera(Clave);
             pap.ShowDialog();
             cargarGrilla();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            negocio.DeleteMarca((Marca)dgvMarcas.CurrentRow.DataBoundItem);
+            if (Clave == "marca")
+            {
+                negocio.DeleteMarca((Marca)dgvMarcas.CurrentRow.DataBoundItem);
+            }
+            if (Clave == "tipo")
+            {
+                negocioTipo.DeleteTipo((TipoPlato)dgvMarcas.CurrentRow.DataBoundItem);
+            }
+
+
             cargarGrilla();
         }
     }

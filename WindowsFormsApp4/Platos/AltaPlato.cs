@@ -21,7 +21,12 @@ namespace Negocio
         private List<TipoPlato> ListaTipoPlatosLocal;
         TipoPlatoNegocio negocio = new TipoPlatoNegocio();
 
+        private List<VajillaXpla> listaVajillaLocal;
+        VajillaXPlaNegocio negocioVaji = new VajillaXPlaNegocio();
+
+
         private Plato PlatoLocal = null;
+
         public AltaPlato()
         {
             InitializeComponent();
@@ -41,7 +46,9 @@ namespace Negocio
                 if (PlatoLocal == null)
                     PlatoLocal = new Plato();
 
-                // si es existente
+            // si es existente
+            PlatoLocal.Tipo = (TipoPlato)comboBoxPla.SelectedItem;
+            PlatoLocal.Descripcion = txtDesc.Text;
                 PlatoLocal.Nombre = txtNombrePla.Text;
                 PlatoLocal.Precio = Convert.ToDecimal(txtPrecioPla.Text);
                // PlatoLocal.Tipo = comboBoxPla.Text;
@@ -70,22 +77,30 @@ namespace Negocio
             ListaTipoPlatosLocal = negocio.listarTipoPlato();
             comboBoxPla.DataSource = null;
             comboBoxPla.DataSource = ListaTipoPlatosLocal;
-            comboBoxPla.DisplayMember = "nombre";
-            comboBoxPla.ValueMember = "id";
+            comboBoxPla.DisplayMember = "Nombre";
+            comboBoxPla.ValueMember = "Id";
+        }
+
+        private void cargarGrilla ()
+        {
+            listaVajillaLocal = negocioVaji.listarVajillaXpla();
+            dgvVajilla.DataSource = listaVajillaLocal;
+
         }
 
 
         private void AltaPlato_Load(object sender, EventArgs e)
         {
-            ListaTipoPlatosLocal = negocio.listarTipoPlato();
-            dgvTipo.DataSource = ListaTipoPlatosLocal;
+            cargarGrilla();
             LlenarComboTipo();
 
             if (PlatoLocal != null)
             {
                 txtNombrePla.Text = PlatoLocal.Nombre;
                 idLabel.Text = PlatoLocal.id.ToString();
-                txtPrecioPla.Text = PlatoLocal.Precio.ToString(); 
+                txtPrecioPla.Text = PlatoLocal.Precio.ToString();
+                txtDesc.Text = PlatoLocal.Descripcion;
+                comboBoxPla.SelectedIndex = comboBoxPla.FindString(PlatoLocal.Tipo.nombre);
 
             }
             

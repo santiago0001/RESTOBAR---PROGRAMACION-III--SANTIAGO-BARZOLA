@@ -43,12 +43,17 @@ namespace WindowsFormsApp4
             { //lista insumos
                 listarPlatoLocal = negocio.listarPlatos();
                 dgvCarta.DataSource = listarPlatoLocal;
-               // listarPlatoLocal.Columns[4].Visible = false;
-               // listarPlatoLocal.Columns[3].Visible = false;
+                dgvCarta.Columns["id"].Visible = false;
+                dgvCarta.Columns["cantidad"].Visible = false;
+                dgvCarta.Columns["estado"].Visible = false;
+                dgvCarta.Columns["nombre"].DisplayIndex= 0;
+                dgvCarta.Columns["descripcion"].DisplayIndex = 1;
+                dgvCarta.Columns["precio"].DisplayIndex = 2;
+                dgvCarta.Columns["nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
 
 
-                
-                
+
+
             }
             catch (Exception ex)
             {

@@ -81,7 +81,7 @@ namespace Negocio
                     nuevo.estado = lector.GetBoolean(2);
 
 
-                    if (!nuevo.estado)
+                    if (nuevo.estado)
                     {
                         listado.Add(nuevo);
                     }
@@ -106,7 +106,7 @@ namespace Negocio
 
 
 
-        public void agregarMarca(TipoPlato nuevo)
+        public void agregarTipo(TipoPlato nuevo)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -133,7 +133,7 @@ namespace Negocio
             }
         }
 
-        public void modificarMarca(TipoPlato modificar)
+        public void modificarTipo(TipoPlato modificar)
             {
                 AccesoDatosManager accesoDatos = new AccesoDatosManager();
                 try

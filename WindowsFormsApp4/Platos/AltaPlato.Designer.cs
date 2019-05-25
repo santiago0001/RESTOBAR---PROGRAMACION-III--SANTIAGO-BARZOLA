@@ -39,14 +39,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dgvTipo = new System.Windows.Forms.DataGridView();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.dgvVajilla = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BotNew = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,22 +150,22 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Descripcion";
             // 
-            // textBox1
+            // txtDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(254, 34);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 48);
-            this.textBox1.TabIndex = 15;
+            this.txtDesc.Location = new System.Drawing.Point(254, 34);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(169, 48);
+            this.txtDesc.TabIndex = 15;
             // 
-            // dgvTipo
+            // dgvVajilla
             // 
-            this.dgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipo.Location = new System.Drawing.Point(11, 45);
-            this.dgvTipo.Name = "dgvTipo";
-            this.dgvTipo.Size = new System.Drawing.Size(240, 123);
-            this.dgvTipo.TabIndex = 16;
-            this.dgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dgvVajilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVajilla.Location = new System.Drawing.Point(11, 45);
+            this.dgvVajilla.Name = "dgvVajilla";
+            this.dgvVajilla.Size = new System.Drawing.Size(240, 123);
+            this.dgvVajilla.TabIndex = 16;
+            this.dgvVajilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -201,7 +201,7 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dgvTipo);
+            this.groupBox1.Controls.Add(this.dgvVajilla);
             this.groupBox1.Location = new System.Drawing.Point(12, 167);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 188);
@@ -228,7 +228,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.BotNew);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.label4);
@@ -246,7 +246,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregado de plato";
             this.Load += new System.EventHandler(this.AltaPlato_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,8 +266,8 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dgvTipo;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.DataGridView dgvVajilla;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;

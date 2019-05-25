@@ -53,6 +53,7 @@
     <Compile Include="Reclamo.cs" />
     <Compile Include="Silla.cs" />
     <Compile Include="TipoPlato.cs" />
+    <Compile Include="VajillaXpla.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
