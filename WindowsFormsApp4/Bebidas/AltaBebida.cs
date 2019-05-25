@@ -115,7 +115,7 @@ namespace WindowsFormsApp4.Bebidas
 
         private void BotNewMar_Click(object sender, EventArgs e)
         {
-            ABMmarcas mar = new ABMmarcas();
+            ABMmarcas mar = new ABMmarcas("marca");
             mar.ShowDialog();
             LlenarComboMarcas();
         }

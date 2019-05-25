@@ -11,13 +11,16 @@ using Dominio;
 using Negocio;
 using AccesoDatos;
 using System.Data.SqlClient;
-using WindowsFormsApp4;
+using WindowsFormsApp4.Bebidas;
 
 
 namespace Negocio
 {
     public partial class AltaPlato : Form
     {
+        private List<TipoPlato> ListaTipoPlatosLocal;
+        TipoPlatoNegocio negocio = new TipoPlatoNegocio();
+
         private Plato PlatoLocal = null;
         public AltaPlato()
         {
@@ -60,21 +63,32 @@ namespace Negocio
                 Close();
             
         }
-            
 
-        
+        private void LlenarComboTipo()
+        {
+
+            ListaTipoPlatosLocal = negocio.listarTipoPlato();
+            comboBoxPla.DataSource = null;
+            comboBoxPla.DataSource = ListaTipoPlatosLocal;
+            comboBoxPla.DisplayMember = "nombre";
+            comboBoxPla.ValueMember = "id";
+        }
+
 
         private void AltaPlato_Load(object sender, EventArgs e)
         {
+            ListaTipoPlatosLocal = negocio.listarTipoPlato();
+            dgvTipo.DataSource = ListaTipoPlatosLocal;
+            LlenarComboTipo();
+
             if (PlatoLocal != null)
             {
                 txtNombrePla.Text = PlatoLocal.Nombre;
                 idLabel.Text = PlatoLocal.id.ToString();
-                txtPrecioPla.Text = PlatoLocal.Precio.ToString();
-                comboBoxPla.Text = PlatoLocal.Tipo.ToString();
- 
+                txtPrecioPla.Text = PlatoLocal.Precio.ToString(); 
 
             }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -95,6 +109,29 @@ namespace Negocio
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ComboBoxPla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void BotNew_Click(object sender, EventArgs e)
+        {
+
+            ABMmarcas marf = new ABMmarcas("tipo");
+            marf.ShowDialog();
+
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
         }
     }
 }

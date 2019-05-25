@@ -177,7 +177,7 @@ namespace Negocio
 
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
-                //hola
+                
             }
             catch (Exception ex)
             {

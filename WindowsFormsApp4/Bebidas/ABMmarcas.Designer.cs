@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMmarcas));
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labTipo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txtmar = new System.Windows.Forms.TextBox();
@@ -51,15 +51,15 @@
             this.dgvMarcas.TabIndex = 0;
             this.dgvMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMarcas_CellClick);
             // 
-            // label1
+            // labTipo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Marcas";
+            this.labTipo.AutoSize = true;
+            this.labTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTipo.Location = new System.Drawing.Point(93, 7);
+            this.labTipo.Name = "labTipo";
+            this.labTipo.Size = new System.Drawing.Size(89, 25);
+            this.labTipo.TabIndex = 1;
+            this.labTipo.Text = "Marcas";
             // 
             // button1
             // 
@@ -127,7 +127,7 @@
             this.Controls.Add(this.txtmar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labTipo);
             this.Controls.Add(this.dgvMarcas);
             this.Name = "ABMmarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -143,7 +143,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMarcas;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labTipo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtmar;

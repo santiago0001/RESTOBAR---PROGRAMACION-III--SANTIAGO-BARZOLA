@@ -11,6 +11,8 @@ namespace Dominio
         public Int64 id { get; set; }
         public string nombre { get; set; }
 
+        public Boolean estado { get; set; }
+
         public override string ToString()
         {
             return nombre;

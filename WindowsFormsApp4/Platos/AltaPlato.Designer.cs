@@ -40,12 +40,13 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTipo = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BotNew = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,17 +107,12 @@
             // comboBoxPla
             // 
             this.comboBoxPla.FormattingEnabled = true;
-            this.comboBoxPla.Items.AddRange(new object[] {
-            "Plato principal",
-            "Entrada",
-            "Postre",
-            "Bebida",
-            "Otros"});
             this.comboBoxPla.Location = new System.Drawing.Point(100, 123);
             this.comboBoxPla.Name = "comboBoxPla";
             this.comboBoxPla.Size = new System.Drawing.Size(148, 21);
             this.comboBoxPla.TabIndex = 10;
             this.comboBoxPla.Text = "Seleccionar tipo de plato";
+            this.comboBoxPla.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPla_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -162,13 +158,14 @@
             this.textBox1.Size = new System.Drawing.Size(169, 48);
             this.textBox1.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgvTipo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 123);
-            this.dataGridView1.TabIndex = 16;
+            this.dgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipo.Location = new System.Drawing.Point(11, 45);
+            this.dgvTipo.Name = "dgvTipo";
+            this.dgvTipo.Size = new System.Drawing.Size(240, 123);
+            this.dgvTipo.TabIndex = 16;
+            this.dgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -178,6 +175,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // button2
             // 
@@ -203,13 +201,23 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvTipo);
             this.groupBox1.Location = new System.Drawing.Point(12, 167);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 188);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vajillas por plato";
+            // 
+            // BotNew
+            // 
+            this.BotNew.Location = new System.Drawing.Point(269, 121);
+            this.BotNew.Name = "BotNew";
+            this.BotNew.Size = new System.Drawing.Size(75, 23);
+            this.BotNew.TabIndex = 22;
+            this.BotNew.Text = "Nuevo tipo";
+            this.BotNew.UseVisualStyleBackColor = true;
+            this.BotNew.Click += new System.EventHandler(this.BotNew_Click);
             // 
             // AltaPlato
             // 
@@ -218,6 +226,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(532, 407);
             this.ControlBox = false;
+            this.Controls.Add(this.BotNew);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
@@ -236,9 +245,8 @@
             this.Name = "AltaPlato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregado de plato";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AltaPlato_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,10 +267,11 @@
         public System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTipo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BotNew;
     }
 }

@@ -92,10 +92,13 @@ PRIMARY KEY(ID,NOMBRE),
 ESTADO BIT NOT NULL
 
 )
+
 CREATE TABLE TIPO_PLATO (
 ID BIGINT NOT NULL PRIMARY KEY IDENTITY (1,1),
 NOMBRE VARCHAR (50) NOT NULL
 )
+alter table tipo_plato
+add estado bit not null default ''
 
 CREATE TABLE VAJILLAXPLATO (
 IDVAJILLA INT NOT NULL ,
@@ -184,3 +187,4 @@ inner join VAJILLA as v on v.ID=vp.IDVAJILLA
 select *from view_vajillaXplato
 
 select *from TIPO_PLATO
+
