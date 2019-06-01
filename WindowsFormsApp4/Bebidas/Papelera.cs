@@ -28,15 +28,20 @@ namespace WindowsFormsApp4.Bebidas
         VajillaNegocio negocioIns = new VajillaNegocio();
         private Insumo InsumoLocal = null;
 
-        // 
+        // platos
         private List<Plato> listarPlatoLocal;
         PlatoNegocio negocioPla = new PlatoNegocio();
         private Plato PlatoLocal = null;
-
+        
+        // tipo platos
         private List<TipoPlato> listarTipoLocal;
         TipoPlatoNegocio negocioTipo = new TipoPlatoNegocio();
         private TipoPlato TipoLocal = null;
 
+        //empleados
+        private List<Empleado> listarEmpleadoLocal;
+        EmpleadosNegocio negocioEm = new EmpleadosNegocio();
+        private Empleado EmpleadoLocal = null;
 
 
         // si es una bebida en el codigo pasamos por string 'bebida' para manejar la papelera como tal
@@ -116,6 +121,16 @@ namespace WindowsFormsApp4.Bebidas
                 {
                     listarPlatoLocal = negocioPla.listarPlatosEliminados();
                     dgvPapelera.DataSource = listarPlatoLocal;
+                    dgvPapelera.Columns["nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
+                    dgvPapelera.Columns["estado"].Visible = false;
+                    dgvPapelera.Columns["tipo"].Visible = false;
+                    dgvPapelera.Columns["id"].Visible = false;
+                    dgvPapelera.Columns["nombre"].DisplayIndex = 0;
+                    dgvPapelera.Columns["descripcion"].DisplayIndex = 1;
+                    dgvPapelera.Columns["precio"].DisplayIndex = 2;
+
+
+
                 }
 
                 if (Clave == "tipo")
@@ -126,7 +141,22 @@ namespace WindowsFormsApp4.Bebidas
                     dgvPapelera.Columns["id"].Visible = false;
                 }
 
+                if (Clave.StartsWith("empleado"))
+                {
+                    listarEmpleadoLocal = negocioEm.listarEmpleadoEliminados();
+                    dgvPapelera.DataSource = listarEmpleadoLocal;
+                    dgvPapelera.Columns["nombre"].DefaultCellStyle.BackColor = Color.GreenYellow;
+                    dgvPapelera.Columns["id"].Visible = false;
+                    dgvPapelera.Columns["estado"].Visible = false;
+                    dgvPapelera.Columns["contraseña"].Visible = false;
+
+
+
+
                 }
+
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -139,50 +169,57 @@ namespace WindowsFormsApp4.Bebidas
             {
                 // si es bebida
                 if (Clave.StartsWith("bebida"))
-            {
-                BebidaLocal = null;
+                {
+                    BebidaLocal = null;
 
-                // si tengo una fila seleccionada
-                BebidaLocal = (Bebida)dgvPapelera.CurrentRow.DataBoundItem;
-                negocio.RestaurarBebida(BebidaLocal);
+                    // si tengo una fila seleccionada
+                    BebidaLocal = (Bebida)dgvPapelera.CurrentRow.DataBoundItem;
+                    negocio.RestaurarBebida(BebidaLocal);
                     MessageBox.Show("Restaurado con exito");
-            
-            }
-             if (Clave.StartsWith("marca"))
-            {
-               
-                // si tengo una fila seleccionada
-               
+
+                }
+                if (Clave.StartsWith("marca"))
+                {
+
+                    // si tengo una fila seleccionada
+
                     MarcaLocal = (Marca)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioMar.RestaurarMarca(MarcaLocal);
                     MessageBox.Show("Restaurado con exito");
-            
-            }
-            if (Clave.StartsWith("vajilla"))
-            {
-                // si tengo una fila seleccionada
-               
+
+                }
+                if (Clave.StartsWith("vajilla"))
+                {
+                    // si tengo una fila seleccionada
+
                     InsumoLocal = (Insumo)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioIns.RestaurarVajilla(InsumoLocal);
                     MessageBox.Show("Restaurado con exito");
-             
-            }
 
-            if (Clave == "plato")
-            {
-                
+                }
+
+                if (Clave == "plato")
+                {
+
                     PlatoLocal = (Plato)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioPla.RestaurarPlato(PlatoLocal);
                     MessageBox.Show("Restaurado con exito");
-              
-            }
-            if (Clave == "tipo")
-            {
-                
+
+                }
+                if (Clave == "tipo")
+                {
+
                     TipoLocal = (TipoPlato)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioTipo.RestaurarTipo(TipoLocal);
                     MessageBox.Show("Restaurado con exito");
                 }
+                if (Clave == "empleado")
+                {
+                    EmpleadoLocal = (Empleado)dgvPapelera.CurrentRow.DataBoundItem;
+                    negocioEm.RestaurarEmpleado(EmpleadoLocal);
+                    MessageBox.Show("Restaurado con exito");
+                }
+
 
             }
             else { MessageBox.Show("No hay elementos para retaurar"); }

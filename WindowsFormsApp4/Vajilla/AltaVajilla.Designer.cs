@@ -108,9 +108,10 @@
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(130, 20);
             this.txtCant.TabIndex = 8;
+            this.txtCant.TextChanged += new System.EventHandler(this.TxtCant_TextChanged);
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
             // 
-            // AltaInsumo
+            // AltaVajilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,7 +124,7 @@
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
-            this.Name = "AltaInsumo";
+            this.Name = "AltaVajilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaInsumo";
             this.Load += new System.EventHandler(this.AltaInsumo_Load);

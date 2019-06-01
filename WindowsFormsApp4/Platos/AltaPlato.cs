@@ -24,6 +24,9 @@ namespace Negocio
         private List<VajillaXpla> listaVajillaLocal;
         VajillaXPlaNegocio negocioVaji = new VajillaXPlaNegocio();
 
+        private List<Insumo> listaInsumo;
+        VajillaXPlaNegocio negocioInsumo = new VajillaXPlaNegocio();
+        Insumo va = new Insumo();
 
         private Plato PlatoLocal = null;
 
@@ -70,7 +73,15 @@ namespace Negocio
                 Close();
             
         }
+        private void LlenarComboVajilla()
+        {
 
+            listaInsumo = negocioInsumo.listarVajilla();
+            comboVajilla.DataSource = null;
+            comboVajilla.DataSource = listaInsumo;
+            comboVajilla.DisplayMember = "Nombre";
+            comboVajilla.ValueMember = "Id";
+        }
         private void LlenarComboTipo()
         {
 
@@ -83,17 +94,27 @@ namespace Negocio
 
         private void cargarGrilla ()
         {
-            listaVajillaLocal = negocioVaji.listarVajillaXpla();
-            dgvVajilla.DataSource = listaVajillaLocal;
+            if (PlatoLocal != null)
+            {
+                listaVajillaLocal = negocioVaji.listarVajillaXpla(Convert.ToInt64(idLabel.Text));
+                dgvVajilla.DataSource = listaVajillaLocal;
+                dgvVajilla.Columns["plato"].Visible = false;
+                dgvVajilla.Columns["idpla"].Visible = false;
+                dgvVajilla.Columns["idvaj"].Visible = false;
+
+
+            }
+
 
         }
 
 
         private void AltaPlato_Load(object sender, EventArgs e)
         {
-            cargarGrilla();
+            this.dgvVajilla.SelectionMode =
+             DataGridViewSelectionMode.FullRowSelect;
             LlenarComboTipo();
-
+            // carga en fromulario si existe plato local
             if (PlatoLocal != null)
             {
                 txtNombrePla.Text = PlatoLocal.Nombre;
@@ -104,6 +125,18 @@ namespace Negocio
 
             }
             
+            cargarGrilla();
+            LlenarComboVajilla();
+            // da de baja botones de plato por vajilla
+            if (PlatoLocal==null)
+            {
+                button1.Enabled = false;
+                comboVajilla.Enabled = false;
+                dgvVajilla.Enabled = false;
+                button2.Enabled = false;
+            }
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -138,7 +171,7 @@ namespace Negocio
 
         private void BotNew_Click(object sender, EventArgs e)
         {
-
+            //ABM DE MARCAS
             ABMmarcas marf = new ABMmarcas("tipo");
             marf.ShowDialog();
 
@@ -147,6 +180,24 @@ namespace Negocio
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
+            
+            va =(Insumo) comboVajilla.SelectedItem;
+            negocioInsumo.agregarVajillaXplato(PlatoLocal.id,Convert.ToInt32(va.id));
+            cargarGrilla();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            
+            if (dgvVajilla.CurrentRow != null)
+            {
+                VajillaXpla vaxpla = new VajillaXpla();
+                vaxpla = (VajillaXpla)dgvVajilla.CurrentRow.DataBoundItem;
+                negocioInsumo.DeleteVajillaXpla(vaxpla.idpla, vaxpla.idvaj);
+                cargarGrilla();
+
+            }
+                
         }
     }
 }

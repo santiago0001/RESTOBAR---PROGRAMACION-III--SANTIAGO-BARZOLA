@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp4.Bebidas;
+using WindowsFormsApp4.Empleados;
+
 
 namespace WindowsFormsApp4
 {
@@ -28,8 +30,7 @@ namespace WindowsFormsApp4
         private void button5_Click(object sender, EventArgs e)
         {
             
-            Salones frm = new Salones();
-            frm.Show();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -74,6 +75,12 @@ namespace WindowsFormsApp4
         {
             AdminBebidas BebidasForm = new AdminBebidas();
             BebidasForm.ShowDialog();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            AdminEmpleados empForm = new AdminEmpleados();
+            empForm.ShowDialog();
         }
     }
     }

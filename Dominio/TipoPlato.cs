@@ -13,6 +13,7 @@ namespace Dominio
 
         public Boolean estado { get; set; }
 
+
         public override string ToString()
         {
             return nombre;

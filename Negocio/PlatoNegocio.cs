@@ -97,7 +97,7 @@ namespace Negocio
                     nuevo.Precio = lector.GetDecimal(2);
                     nuevo.Tipo = new TipoPlato();
                     nuevo.Tipo.nombre = lector["tipo"].ToString();
-                    nuevo.Tipo.id = (Int64)lector["idtipo"];
+                    nuevo.Tipo.id = lector.GetInt64(4);
                     nuevo.Estado = lector.GetBoolean(5);
 
 

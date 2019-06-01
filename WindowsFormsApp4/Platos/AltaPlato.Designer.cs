@@ -43,7 +43,7 @@
             this.dgvVajilla = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboVajilla = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BotNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).BeginInit();
@@ -185,21 +185,22 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "Eliminar ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
-            // comboBox1
+            // comboVajilla
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(257, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            this.comboVajilla.FormattingEnabled = true;
+            this.comboVajilla.Location = new System.Drawing.Point(257, 44);
+            this.comboVajilla.Name = "comboVajilla";
+            this.comboVajilla.Size = new System.Drawing.Size(121, 21);
+            this.comboVajilla.TabIndex = 20;
+            this.comboVajilla.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboVajilla);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dgvVajilla);
             this.groupBox1.Location = new System.Drawing.Point(12, 167);
@@ -270,7 +271,7 @@
         private System.Windows.Forms.DataGridView dgvVajilla;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboVajilla;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BotNew;
     }

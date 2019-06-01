@@ -100,5 +100,10 @@ namespace WindowsFormsApp4
         {
 
         }
+
+        private void TxtCant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
