@@ -185,6 +185,7 @@
             this.ButCancelar.TabIndex = 12;
             this.ButCancelar.Text = "Cancelar";
             this.ButCancelar.UseVisualStyleBackColor = true;
+            this.ButCancelar.Click += new System.EventHandler(this.ButCancelar_Click);
             // 
             // label2
             // 

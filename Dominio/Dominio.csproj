@@ -46,11 +46,9 @@
     <Compile Include="Insumo.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Mesa.cs" />
-    <Compile Include="Mesero.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Plato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reclamo.cs" />
     <Compile Include="Silla.cs" />
     <Compile Include="TipoPlato.cs" />
     <Compile Include="VajillaXpla.cs" />

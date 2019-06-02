@@ -22,9 +22,12 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Asignacion frm = new Asignacion();
-            frm.Show();
+            Asignacion form3 = new Asignacion();
+
+            form3.MdiParent = this.MdiParent;
+
+            form3.Show();
+       
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -81,6 +84,11 @@ namespace WindowsFormsApp4
         {
             AdminEmpleados empForm = new AdminEmpleados();
             empForm.ShowDialog();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

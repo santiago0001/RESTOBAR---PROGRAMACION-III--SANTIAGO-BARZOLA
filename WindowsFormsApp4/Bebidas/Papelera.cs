@@ -43,6 +43,11 @@ namespace WindowsFormsApp4.Bebidas
         EmpleadosNegocio negocioEm = new EmpleadosNegocio();
         private Empleado EmpleadoLocal = null;
 
+        //mesas
+        private List<Mesa> listaMesasLocal;
+        MesaNegocio negome = new MesaNegocio();
+        private Mesa MesaLocal = null;
+
 
         // si es una bebida en el codigo pasamos por string 'bebida' para manejar la papelera como tal
         string Clave;
@@ -149,9 +154,18 @@ namespace WindowsFormsApp4.Bebidas
                     dgvPapelera.Columns["id"].Visible = false;
                     dgvPapelera.Columns["estado"].Visible = false;
                     dgvPapelera.Columns["contraseña"].Visible = false;
+                 }
+                if (Clave.StartsWith("mesa"))
 
-
-
+                {
+                    listaMesasLocal = negome.listarMesasEliminada();
+                    dgvPapelera.DataSource = listaMesasLocal;
+                    dgvPapelera.Columns["IdMesero"].Visible = false;
+                    dgvPapelera.Columns["estado"].Visible = false;
+                    dgvPapelera.Columns["ocupado"].Visible = false;
+                    dgvPapelera.Columns["NomApe"].HeaderText = "Nombre y apellido";
+                    dgvPapelera.Columns["IdMesa"].HeaderText = "N° Mesa";
+                    dgvPapelera.Columns["stOcupado"].HeaderText = "Estado";
 
                 }
 
@@ -171,54 +185,46 @@ namespace WindowsFormsApp4.Bebidas
                 if (Clave.StartsWith("bebida"))
                 {
                     BebidaLocal = null;
-
                     // si tengo una fila seleccionada
                     BebidaLocal = (Bebida)dgvPapelera.CurrentRow.DataBoundItem;
                     negocio.RestaurarBebida(BebidaLocal);
-                    MessageBox.Show("Restaurado con exito");
-
                 }
                 if (Clave.StartsWith("marca"))
                 {
-
                     // si tengo una fila seleccionada
-
                     MarcaLocal = (Marca)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioMar.RestaurarMarca(MarcaLocal);
-                    MessageBox.Show("Restaurado con exito");
-
                 }
                 if (Clave.StartsWith("vajilla"))
                 {
                     // si tengo una fila seleccionada
-
                     InsumoLocal = (Insumo)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioIns.RestaurarVajilla(InsumoLocal);
-                    MessageBox.Show("Restaurado con exito");
-
                 }
 
                 if (Clave == "plato")
                 {
-
                     PlatoLocal = (Plato)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioPla.RestaurarPlato(PlatoLocal);
-                    MessageBox.Show("Restaurado con exito");
 
                 }
                 if (Clave == "tipo")
                 {
-
                     TipoLocal = (TipoPlato)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioTipo.RestaurarTipo(TipoLocal);
-                    MessageBox.Show("Restaurado con exito");
                 }
                 if (Clave == "empleado")
                 {
                     EmpleadoLocal = (Empleado)dgvPapelera.CurrentRow.DataBoundItem;
                     negocioEm.RestaurarEmpleado(EmpleadoLocal);
-                    MessageBox.Show("Restaurado con exito");
                 }
+                if (Clave.StartsWith("mesa"))
+                {
+                    MesaLocal = (Mesa)dgvPapelera.CurrentRow.DataBoundItem;
+                    negome.RestaurarMesa(MesaLocal);
+                }
+                MessageBox.Show("Restaurado con exito");
+
 
 
             }

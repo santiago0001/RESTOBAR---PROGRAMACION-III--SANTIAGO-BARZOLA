@@ -89,6 +89,7 @@ namespace WindowsFormsApp4.Bebidas
                 txtCant.Text = BebidaLocal.Cantidad.ToString();
                 radioCopa.Checked = BebidaLocal.Copa;
                 if (radioCopa.Checked==false) { radioVaso.Checked = true; }
+                // bucsac coincidencia con combo box y se para en el ID
                 comboMar.SelectedIndex = comboMar.FindString(BebidaLocal.marca.Nombre);
 
             }
@@ -118,6 +119,11 @@ namespace WindowsFormsApp4.Bebidas
             ABMmarcas mar = new ABMmarcas("marca");
             mar.ShowDialog();
             LlenarComboMarcas();
+        }
+
+        private void ButCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Mesa
+   public class Mesa
     {
-        public Pedido Pedido { get; set; }
-        public int Minutos { get; set; }
-        public Mesero Mesero { get; set; }
-        public Silla silla { get; set; }
+        public Int64 IdMesero { get; set; }
+        public Int64 IdMesa { get; set; }
+        public string NomApe { get; set; }
+        public Boolean ocupado { get; set; }
+        public Boolean estado { get; set; }
+        public string stOcupado { get; set; }
+
+
     }
 }

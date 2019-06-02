@@ -144,10 +144,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vajilla\VajillaMesero.cs">
+    <Compile Include="otros\VajillaMesero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vajilla\VajillaMesero.Designer.cs">
+    <Compile Include="otros\VajillaMesero.Designer.cs">
       <DependentUpon>VajillaMesero.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Bebidas\ABMmarcas.resx">
@@ -207,7 +207,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vajilla\VajillaMesero.resx">
+    <EmbeddedResource Include="otros\VajillaMesero.resx">
       <DependentUpon>VajillaMesero.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

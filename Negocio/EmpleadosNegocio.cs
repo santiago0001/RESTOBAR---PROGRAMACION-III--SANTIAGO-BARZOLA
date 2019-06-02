@@ -13,6 +13,54 @@ namespace Negocio
 {
    public class EmpleadosNegocio
     {
+        public List<Empleado> listarEmpleadoTotal()
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Empleado> listado = new List<Empleado>();
+            Empleado nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "SELECT *from empleado";
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new Empleado();
+                    nuevo.Id = lector.GetInt64(0);
+                    nuevo.Nombre = lector.GetString(1);
+                    nuevo.Apellido = lector.GetString(2);
+                    nuevo.Puesto = lector.GetString(3);
+                    nuevo.Dni = lector.GetInt32(4);
+                    nuevo.Estado = lector.GetBoolean(5);
+
+                    nuevo.Usuario = lector.GetString(6);
+                    nuevo.Contraseña = lector.GetString(7);
+
+                    
+                        listado.Add(nuevo);
+                  
+
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
         public List<Empleado> listarEmpleado()
         {
@@ -63,7 +111,54 @@ namespace Negocio
             }
         }
 
+        public List<Empleado> listarMeseros()
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Empleado> listado = new List<Empleado>();
+            Empleado nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "SELECT *from vw_mesero";
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
 
+                while (lector.Read())
+                {
+                    nuevo = new Empleado();
+                    nuevo.Id = lector.GetInt64(0);
+                    nuevo.Nombre = lector.GetString(1);
+                    nuevo.Puesto = lector.GetString(2);
+                    nuevo.Dni = lector.GetInt32(3);
+                    nuevo.Estado = lector.GetBoolean(4);
+
+                    nuevo.Usuario = lector.GetString(5);
+                    nuevo.Contraseña = lector.GetString(6);
+
+                    if (nuevo.Estado && nuevo.Puesto=="Mesero")
+                    {
+                        listado.Add(nuevo);
+                    }
+
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
         public List<Empleado> listarEmpleadoEliminados()
         {
@@ -228,9 +323,7 @@ namespace Negocio
         }
 
 
-
-
-
+      
 
 
     }
