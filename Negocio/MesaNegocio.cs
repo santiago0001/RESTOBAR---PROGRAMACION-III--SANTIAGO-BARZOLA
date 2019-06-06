@@ -184,7 +184,6 @@ namespace Negocio
             }
         }
 
-
         public void RestaurarMesa(Mesa mesa)
         {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -205,6 +204,56 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public List<Mesa> mesasXmesero(Int64 idmese)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Mesa> listado = new List<Mesa>();
+            Mesa nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "sp_mesasXmesero "+idmese;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new Mesa();
+                    nuevo.IdMesa = lector.GetInt64(0);
+                    nuevo.estado = lector.GetBoolean(2);
+                    nuevo.ocupado = lector.GetBoolean(1);
+                    if (nuevo.ocupado)
+                    { nuevo.stOcupado = "Ocupado"; }
+                    else { nuevo.stOcupado = "Libre"; }
+
+
+                    if (nuevo.estado)
+                    {
+                        listado.Add(nuevo);
+                    }
+
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
 
     }
 }

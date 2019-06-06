@@ -52,3 +52,9 @@ C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BAR
 C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
 C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.dll
 C:\Users\canch\OneDrive\Documentos\UTN\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.pdb
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.dll
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\bin\Debug\ClassLibrary4.pdb
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csprojAssemblyReference.cache
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\AccesosDato.csproj.CoreCompileInputs.cache
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.dll
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\ClassLibrary4\obj\Debug\ClassLibrary4.pdb
