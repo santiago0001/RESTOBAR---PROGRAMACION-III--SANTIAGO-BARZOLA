@@ -242,7 +242,61 @@ namespace Negocio
             }
         }
 
+        public List<Plato> listarPlatosXtipo(Int64 idtipo)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Plato> listado = new List<Plato>();
+            Plato nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "sp_platoXtipo "+ idtipo;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
 
+                while (lector.Read())
+                {
+                    nuevo = new Plato();
+                    nuevo.id = lector.GetInt64(0);
+                    nuevo.Nombre = lector.GetString(1);
+                    nuevo.Precio = lector.GetDecimal(3);
+
+
+
+
+                    //MSF-20190420: acá manejamos un posible nulo desde la DB. Recuerdan que la otra vez nos falló?
+                    //Era porque en la DB estaba nulo y acá lo queríamos tomar y no le gustaba.
+                    //Ojo... en la tabla no todas las columnas van a ser nuleables... en nuestro caso porque no le dimos
+                    //importancia casi al diseño de la misma. Pero si está bien armada la tabla, serán pocas las columnas
+                    //que sean nulleables. Solo a esa deberían agregarles ésta validación. Que de hecho pueden meter en un método
+                    //para no tener que escribirla completa cada vez, por ejemplo.
+                    // if (!Convert.IsDBNull(lector["Debilidad"]))
+                    //    nuevo.Debilidad = lector.GetString(2);
+
+                    if (!Convert.IsDBNull(lector["descripcion"]))
+                        nuevo.Descripcion = (string)lector["descripcion"];
+
+                    
+                        listado.Add(nuevo);
+                  
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
 
 

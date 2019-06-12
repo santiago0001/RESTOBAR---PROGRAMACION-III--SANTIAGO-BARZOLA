@@ -22,15 +22,18 @@ namespace WebApplication2
         {
             if (IsPostBack == false)
             {
+
                 listaEmpleados = negocioEm.listarMeseros();
                 DropDownList1.DataSource = null;
                 DropDownList1.DataSource = listaEmpleados;
                 DropDownList1.DataTextField = "Nombre";
                 DropDownList1.DataValueField = "id";
                 DropDownList1.DataBind();
+                droplist();
+
             }
 
-          
+
 
         }
 
@@ -39,34 +42,40 @@ namespace WebApplication2
             
         }
 
-        protected void ButPedido_Click(object sender, EventArgs e)
-        {
-
-            Response.Redirect("mesapagg.aspx");
-
-        }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
 
-        protected void Button1_Click1(object sender, EventArgs e)
+
+        protected void droplist()
         {
+            LabNombre.Text = DropDownList1.SelectedItem.ToString();
+            Session["id"] = DropDownList1.SelectedItem.Value.ToString();
+            Session["nomMesero"] = DropDownList1.SelectedItem.Text.ToString();
 
         }
-
         protected void DropDownList1_TextChanged(object sender, EventArgs e)
         {
-            
-                LabNombre.Text = DropDownList1.SelectedItem.ToString();
-            Session ["id"] = DropDownList1.SelectedItem.Value.ToString();
+
+            droplist();
 
 
             //Session["id"] = DropDownList1.SelectedItem.Text;
 
 
 
+        }
+
+        protected void ButPedido_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/mesapagg.aspx");
+        }
+
+        protected void ButPedido_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/mesapagg.aspx");
         }
     }
 }
