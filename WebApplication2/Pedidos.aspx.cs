@@ -16,6 +16,7 @@ namespace WebApplication2
 
         PlatoNegocio negoPlato = new PlatoNegocio();
         private List<Plato> listaPlato;
+        Plato platoLocal;
 
         PedidoNegocio negoPe = new PedidoNegocio();
         private List<PedidoPlato> listaPedido;
@@ -30,7 +31,7 @@ namespace WebApplication2
                 listaTipo = negotipo.listarTipoPlato();
                 ddltipo.DataSource = null;
                 ddltipo.DataSource = listaTipo;
-                ddltipo.DataTextField = "nombre";
+                ddltipo.DataTextField = "nombre" ;
                 ddltipo.DataValueField = "id";
                 ddltipo.DataBind();
 
@@ -38,7 +39,8 @@ namespace WebApplication2
 
                 droplist();
                 cargarGrilla();
-            
+                cargarPrecio();
+
             }
             if (Session["idMesa"] != null) {
             LabelMesero.Text = Session["idMesa"].ToString();
@@ -68,6 +70,7 @@ namespace WebApplication2
             ddlPlato.DataTextField = "nombre";
             ddlPlato.DataValueField = "id";
             ddlPlato.DataBind();
+            //cargarPrecio();
 
         }
         protected void ddltipo_TextChanged(object sender, EventArgs e)
@@ -75,7 +78,18 @@ namespace WebApplication2
             CagarddlPlatos();
 
         }
-
+        protected void cargarPrecio()
+        {
+            
+                if (ddlPlato.SelectedItem.Value == null)
+            {
+                labPrecio.Text = "  ";
+            }
+            else
+            {
+                labPrecio.Text = negoPlato.precioPlato(Convert.ToInt64(ddlPlato.SelectedItem.Value)).ToString();
+            }
+        }
         protected void butAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("mesapagg.aspx");
@@ -107,6 +121,9 @@ namespace WebApplication2
 
         }
 
-  
+        protected void ddlPlato_TextChanged(object sender, EventArgs e)
+        {
+            cargarPrecio();
+        }
     }
 }

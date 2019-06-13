@@ -43,12 +43,12 @@
                             <asp:Button ID="butAtras" class="btn btn-light" runat="server" OnClick="butAtras_Click" Text="Atras" />
 
                  <br />                  
-                <b><font "impact" color="blue" size="30">
-                    <asp:Label ID="Label3" runat="server" Text="Carga de pedidos" top="2" BackColor="#99CCFF"></asp:Label>
+                <b><font "impact" color="white" size="30">
+                    <asp:Label ID="Label3" runat="server" Text="Carga de pedidos" top="2" ></asp:Label>
                 </font></b>                
 
-               <b><font "impact" color="blue" size="30">
-                    <asp:Label ID="Label1" runat="server" Text="Mesa" BackColor="#99CCFF"></asp:Label>                                           <asp:Label  ID="LabelMesero" BackColor="#99CCFF" runat="server" Text=" "></asp:Label>
+               <b><font "impact" color="white" size="30">
+                    <asp:Label ID="Label1" runat="server" Text="Mesa" ></asp:Label>                                           <asp:Label  ID="LabelMesero"  runat="server" Text=" "></asp:Label>
       <asp:Label ID="LabelNom" runat="server" Text=" "></asp:Label>
 
                 &nbsp;
@@ -58,17 +58,17 @@
 
                 <br /><br />
                 <table class="egt" align="left">
-                    <tr align="center">
+                    <tr align="left">
                         <td class="auto-style1" ><FONT 'impact' SIZE=3 COLOR="White" ><b>Tipo de plato</b></FONT ></td>
                     </tr> 
-                    <tr align="center">
+                    <tr align="left">
                         <td class="auto-style1">
                             <asp:DropDownList class="btn btn-secondary dropdown-toggle" ID="ddltipo" runat="server" Height="35px" Width="172px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" OnTextChanged="ddltipo_TextChanged">
                             </asp:DropDownList>
                         </td>
                        
                     </tr> <tr><td><FONT 'impact' SIZE=3 COLOR="White" ><b>Plato</b></FONT > </tr>
-                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlPlato" runat="server" class="btn btn-secondary dropdown-toggle" Height="35px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="172px">
+                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlPlato" runat="server" class="btn btn-secondary dropdown-toggle" Height="32px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="324px" OnTextChanged="ddlPlato_TextChanged">
                             </asp:DropDownList></td></tr>
 
                      </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad</b></FONT ></td></tr>
@@ -101,7 +101,9 @@
                 <b>
                 
                 </b>
-                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br />
+                            <asp:Label ID="labPrecio" runat="server" Text="Label"></asp:Label>
+                            <br /><br /><br /><br />
                 <br />
                 <br />
 

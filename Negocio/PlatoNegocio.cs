@@ -9,7 +9,7 @@ using AccesoDatos;
 
 namespace Negocio
 {
-    public class PlatoNegocio 
+    public class PlatoNegocio
     {
         public List<Plato> listarPlatosEliminados()
         {
@@ -93,7 +93,7 @@ namespace Negocio
                 {
                     nuevo = new Plato();
                     nuevo.id = lector.GetInt64(0);
-                   nuevo.Nombre = lector.GetString(1);
+                    nuevo.Nombre = lector.GetString(1);
                     nuevo.Precio = lector.GetDecimal(2);
                     nuevo.Tipo = new TipoPlato();
                     nuevo.Tipo.nombre = lector["tipo"].ToString();
@@ -113,10 +113,10 @@ namespace Negocio
                     //    nuevo.Debilidad = lector.GetString(2);
 
                     if (!Convert.IsDBNull(lector["descripcion"]))
-                       nuevo.Descripcion = (string)lector["descripcion"];
+                        nuevo.Descripcion = (string)lector["descripcion"];
 
-                    if (nuevo.Estado) { 
-                    listado.Add(nuevo);
+                    if (nuevo.Estado) {
+                        listado.Add(nuevo);
                     }
                 }
 
@@ -145,8 +145,8 @@ namespace Negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
                 comando.CommandText = "INSERT INTO plato (NOMBRE,descripcion,tipo,precio,estado) values";
-               comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Descripcion +"'," + nuevo.Tipo.id +  
-                    ","+nuevo.Precio+ ",1 )";
+                comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "'," + nuevo.Tipo.id +
+                     "," + nuevo.Precio + ",1 )";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -178,7 +178,7 @@ namespace Negocio
 
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
-                
+
             }
             catch (Exception ex)
             {
@@ -253,7 +253,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "sp_platoXtipo "+ idtipo;
+                comando.CommandText = "sp_platoXtipo " + idtipo;
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -263,7 +263,6 @@ namespace Negocio
                     nuevo = new Plato();
                     nuevo.id = lector.GetInt64(0);
                     nuevo.Nombre = lector.GetString(1);
-                    nuevo.Precio = lector.GetDecimal(3);
 
 
 
@@ -280,9 +279,9 @@ namespace Negocio
                     if (!Convert.IsDBNull(lector["descripcion"]))
                         nuevo.Descripcion = (string)lector["descripcion"];
 
-                    
-                        listado.Add(nuevo);
-                  
+
+                    listado.Add(nuevo);
+
                 }
 
                 return listado;
@@ -299,7 +298,40 @@ namespace Negocio
         }
 
 
+        public decimal precioPlato(Int64 idplato){
 
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Plato> listado = new List<Plato>();
+            decimal precio;
+                try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "precioPlato "+idplato;
+            comando.Connection = conexion;
+            conexion.Open();
+            lector = comando.ExecuteReader();
+                precio = 0;
+
+                while (lector.Read())
+            {
+                    precio = lector.GetDecimal(0);
+            }
+
+            return precio;
+
+        }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+}
 
 
     }
