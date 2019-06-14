@@ -19,7 +19,7 @@
     <form id="form1" runat="server">--%>
     <asp:Content  ID="idContentPedido" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
-<%--<!DOCTYPE html>
+        <%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -68,8 +68,8 @@
                         </td>
                        
                     </tr> <tr><td><FONT 'impact' SIZE=3 COLOR="White" ><b>Plato</b></FONT > </tr>
-                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlPlato" runat="server" class="btn btn-secondary dropdown-toggle" Height="32px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="324px" OnTextChanged="ddlPlato_TextChanged">
-                            </asp:DropDownList></td></tr>
+                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlPlato" runat="server" class="btn btn-secondary dropdown-toggle" Height="32px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="324px" OnTextChanged="ddlPlato_TextChanged" AutoPostBack="True">
+                            </asp:DropDownList> <FONT 'impact' SIZE=6 COLOR="White" ><b>  &nbsp;&nbsp;&nbsp; $ <asp:Label ID="labPrecio" runat="server" Text="Label" color="white"></b></asp:Label></FONT > </td></tr>
 
                      </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad</b></FONT ></td></tr>
                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b><asp:TextBox ID="txtCant" runat="server" Width="155px"></asp:TextBox></b></FONT ></td></tr>
@@ -88,13 +88,13 @@
                             </asp:DropDownList>
                         </td>
                        
-                    </tr> <tr><td><FONT 'impact' SIZE=3 COLOR="White" ><b>Bebida</b></FONT > </tr>
-                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlbebida" runat="server" class="btn btn-secondary dropdown-toggle" Height="35px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="172px">
-                            </asp:DropDownList></td></tr>
+                    </tr> <tr><td class="auto-style5"><FONT 'impact' SIZE=3 COLOR="White" ><b>Bebida</b></FONT > </tr>
+                    <tr><td class="auto-style2"><asp:DropDownList ID="ddlbebida" runat="server" class="btn btn-secondary dropdown-toggle" Height="35px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="172px" AutoPostBack="True" OnTextChanged="ddlbebida_TextChanged">
+                            </asp:DropDownList><br/><FONT 'impact' SIZE=3 COLOR="White" ><b> <asp:Label ID="DescBeb" runat="server" Text="Label"></asp:Label> </b></FONT></td></tr>
 
                      </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad</b></FONT ></td></tr>
-                    </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b><asp:TextBox ID="TextBox1" runat="server" Width="155px"></asp:TextBox></b></FONT ></td></tr>
-              </tr> <tr><td class="auto-style2"><asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg"  OnClick="butCarga_Click" Text="Cargar bebida" /></b></FONT ></td></tr>
+                    </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b><asp:TextBox ID="txtcantbeb" runat="server" Width="155px"></asp:TextBox></b></FONT ></td></tr>
+              </tr> <tr><td class="auto-style2"><asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg"  OnClick="butCargabeb_Click" Text="Cargar bebida" /></b></FONT ></td></tr>
                 </table>
 
                 <br />
@@ -102,11 +102,13 @@
                 
                 </b>
                 <br /><br /><br />
-                            <asp:Label ID="labPrecio" runat="server" Text="Label"></asp:Label>
-                            <br /><br /><br /><br />
+                         
+                            <br /><br /><br />
+                            
+                            <br />
                 <br />
                 <br />
-
+                <br />
 
                 <b>
 
@@ -171,6 +173,9 @@
         }
         .auto-style4 {
             margin-top: 14px;
+        }
+        .auto-style5 {
+            height: 26px;
         }
         </style>
 </asp:Content>

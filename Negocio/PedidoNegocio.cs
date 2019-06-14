@@ -121,7 +121,57 @@ namespace Negocio
             }
         }
 
+        public void AgregarPedidoPla(Int64 idplato, Int64 idmesa, Int64 cantidad)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
+                comando.CommandText = "AgregarPlatoPedido "+ idplato + ","+ idmesa +","+ cantidad;
+                comando.Connection = conexion;
+                conexion.Open();
 
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public void AgregarBebidaPla(Int64 idbebida, Int64 idmesa, Int64 cantidad)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
+                comando.CommandText = "AgegarBebidaPedido " + idmesa + "," + idbebida + "," + cantidad;
+                comando.Connection = conexion;
+                conexion.Open();
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
     }
 }

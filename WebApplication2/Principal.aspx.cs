@@ -77,5 +77,11 @@ namespace WebApplication2
         {
             Response.Redirect("~/mesapagg.aspx");
         }
+
+        protected void btnLiberar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Liberar.aspx");
+
+        }
     }
 }

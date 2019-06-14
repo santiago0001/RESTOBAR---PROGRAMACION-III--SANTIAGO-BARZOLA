@@ -85,6 +85,15 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.DropDownList ddlPlato;
         
         /// <summary>
+        /// Control labPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labPrecio;
+        
+        /// <summary>
         /// Control txtCant.
         /// </summary>
         /// <remarks>
@@ -121,13 +130,22 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.DropDownList ddlbebida;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control DescBeb.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label DescBeb;
+        
+        /// <summary>
+        /// Control txtcantbeb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtcantbeb;
         
         /// <summary>
         /// Control Button1.
@@ -137,15 +155,6 @@ namespace WebApplication2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Control labPrecio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labPrecio;
         
         /// <summary>
         /// Control gdvPedido.

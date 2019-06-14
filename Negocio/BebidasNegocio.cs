@@ -266,8 +266,88 @@ namespace Negocio
 
 
 
+        public List<Bebida> listarBebidasXmarca(Int64 idmarca)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Bebida> listado = new List<Bebida>();
+            Bebida nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "BebidasxMarca "+idmarca;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new Bebida();
+                    nuevo.id = lector.GetInt64(1);
+                    //  nuevo.idMarca = lector.GetInt64(1);
+                    nuevo.Nombre = lector.GetString(0);
+                    nuevo.Descripcion = lector.GetString(2);
 
 
+
+                    listado.Add(nuevo);
+                   
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
+        public string DescripcionBebida(Int64 idBebida)
+        {
+            string descr;
+            descr = " nada";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            try
+            {
+
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "descripcionBebida " + idBebida;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+
+                    descr = lector.GetString(0);
+
+
+                }
+                return descr;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
     }
 

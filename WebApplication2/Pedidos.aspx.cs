@@ -14,6 +14,13 @@ namespace WebApplication2
         TipoPlatoNegocio negotipo = new TipoPlatoNegocio();
         private List<TipoPlato> listaTipo;
 
+        BebidasNegocio negoBebida = new BebidasNegocio();
+        MarcaNegocio negoMarca = new MarcaNegocio();
+
+        private List<Bebida> listaBebida;
+        private List<Marca> listaMarca;
+
+
         PlatoNegocio negoPlato = new PlatoNegocio();
         private List<Plato> listaPlato;
         Plato platoLocal;
@@ -41,6 +48,9 @@ namespace WebApplication2
                 cargarGrilla();
                 cargarPrecio();
 
+                CargaMarcasBeb();
+                CargaBebida();
+                CargarDescripcion();
             }
             if (Session["idMesa"] != null) {
             LabelMesero.Text = Session["idMesa"].ToString();
@@ -55,10 +65,33 @@ namespace WebApplication2
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CargarDescripcion();
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CargaBebida();
+            CargarDescripcion();
+        }
+
+        protected void CargaMarcasBeb()
+        {
+            listaMarca = negoMarca.listarMarcas();
+            ddlMarcas.DataSource = null;
+            ddlMarcas.DataSource = listaMarca;
+            ddlMarcas.DataTextField = "nombre";
+            ddlMarcas.DataValueField = "id";
+            ddlMarcas.DataBind();
+
+        }
+        protected void CargaBebida()
+        {
+            listaBebida = negoBebida.listarBebidasXmarca(Convert.ToInt64(ddlMarcas.SelectedItem.Value));
+            ddlbebida.DataSource = null;
+            ddlbebida.DataSource = listaBebida;
+            ddlbebida.DataTextField = "nombre";
+            ddlbebida.DataValueField = "id";
+            ddlbebida.DataBind();
 
         }
 
@@ -76,18 +109,24 @@ namespace WebApplication2
         protected void ddltipo_TextChanged(object sender, EventArgs e)
         {
             CagarddlPlatos();
+            cargarPrecio();
 
         }
         protected void cargarPrecio()
         {
             
-                if (ddlPlato.SelectedItem.Value == null)
+                if (ddlPlato.SelectedItem == null)
             {
                 labPrecio.Text = "  ";
             }
             else
             {
-                labPrecio.Text = negoPlato.precioPlato(Convert.ToInt64(ddlPlato.SelectedItem.Value)).ToString();
+                string cadena = negoPlato.precioPlato(Convert.ToInt64(ddlPlato.SelectedItem.Value)).ToString(); ;
+
+                string[] separadas;
+
+                separadas = cadena.Split(',');
+                labPrecio.Text = separadas[0];
             }
         }
         protected void butAtras_Click(object sender, EventArgs e)
@@ -98,6 +137,9 @@ namespace WebApplication2
 
         protected void butCarga_Click(object sender, EventArgs e)
         {
+            cargarGrilla();
+            negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value), 
+                Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text));
             cargarGrilla();
 
         }
@@ -124,6 +166,29 @@ namespace WebApplication2
         protected void ddlPlato_TextChanged(object sender, EventArgs e)
         {
             cargarPrecio();
+        }
+
+        protected void butCargabeb_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+            negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
+                Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text));
+            cargarGrilla();
+        }
+        protected void CargarDescripcion()
+        {
+            if (ddlPlato.SelectedItem == null)
+            {
+                labPrecio.Text = "  ";
+            }
+            else
+            {
+                DescBeb.Text = negoBebida.DescripcionBebida(Convert.ToInt64(ddlbebida.SelectedItem.Value));
+
+            }
+        }
+        protected void ddlbebida_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

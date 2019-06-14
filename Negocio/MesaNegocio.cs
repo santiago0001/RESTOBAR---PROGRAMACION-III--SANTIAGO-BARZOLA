@@ -226,17 +226,14 @@ namespace Negocio
                 {
                     nuevo = new Mesa();
                     nuevo.IdMesa = lector.GetInt64(0);
-                    nuevo.estado = lector.GetBoolean(2);
                     nuevo.ocupado = lector.GetBoolean(1);
                     if (nuevo.ocupado)
                     { nuevo.stOcupado = "Ocupado"; }
                     else { nuevo.stOcupado = "Libre"; }
 
 
-                    if (nuevo.estado)
-                    {
                         listado.Add(nuevo);
-                    }
+                    
 
                 }
 
@@ -250,6 +247,28 @@ namespace Negocio
             finally
             {
                 conexion.Close();
+            }
+        }
+
+
+        public void LiberarMesa(Int64 idmesa, Boolean ocupado)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+
+                accesoDatos.setearConsulta("sp_OcupadoMesa " + idmesa+ ","+ocupado);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
             }
         }
 

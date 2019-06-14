@@ -10,7 +10,7 @@
 namespace WebApplication2 {
     
     
-    public partial class WebForm1 {
+    public partial class Liberar {
         
         /// <summary>
         /// Control Panel1.
@@ -22,22 +22,31 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Control LabNombre.
+        /// Control btnAtras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabNombre;
+        protected global::System.Web.UI.WebControls.Button btnAtras;
         
         /// <summary>
-        /// Control ButPedido.
+        /// Control ddlmesas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButPedido;
+        protected global::System.Web.UI.WebControls.GridView ddlmesas;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control btnLiberar.
@@ -47,41 +56,5 @@ namespace WebApplication2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLiberar;
-        
-        /// <summary>
-        /// Control btnOcupar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOcupar;
-        
-        /// <summary>
-        /// Control btnPedPen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPedPen;
-        
-        /// <summary>
-        /// Control btnCobrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCobrar;
-        
-        /// <summary>
-        /// Control DropDownList1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
     }
 }
