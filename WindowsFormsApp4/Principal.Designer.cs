@@ -50,7 +50,7 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(187, 17);
+            this.button3.Location = new System.Drawing.Point(12, 52);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 29);
             this.button3.TabIndex = 2;
@@ -61,7 +61,7 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(357, 17);
+            this.button6.Location = new System.Drawing.Point(12, 87);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(154, 29);
             this.button6.TabIndex = 5;
@@ -72,7 +72,7 @@
             // button10
             // 
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(529, 17);
+            this.button10.Location = new System.Drawing.Point(12, 122);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(154, 29);
             this.button10.TabIndex = 7;
@@ -83,7 +83,7 @@
             // button9
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(690, 17);
+            this.button9.Location = new System.Drawing.Point(12, 157);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(154, 30);
             this.button9.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 490);
+            this.ClientSize = new System.Drawing.Size(484, 348);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button1);

@@ -9,15 +9,7 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            font-size: 12pt;
-            vertical-align: middle;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
-</head>
+    </head>
 <body background="https://images4.alphacoders.com/646/646937.jpg">
     <form id="form1" runat="server">
         <div>
@@ -26,29 +18,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <span class="auto-style1">Inicio</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <asp:Panel ID="Panel1" runat="server" BackColor="#000066" BorderColor="#9999FF" Height="39px">
+                <asp:Button CssClass= "btn btn-outline-primary" ID="btnInicio" runat="server" Text="Inicio" BorderColor="#66FFFF" OnClick="btnInicio_Click" BorderStyle="None" />
+                &nbsp;<asp:Button  CssClass= "btn btn-outline-primary" ID="btnPedido" runat="server" Text="Carga de pedido" Width="131px" BorderStyle="None" OnClick="Button1_Click" />
+                &nbsp;<asp:Button  CssClass= "btn btn-outline-primary" ID="Button2" runat="server" Text="Mesas" BorderStyle="None" OnClick="Button2_Click" />
+                        &nbsp;<asp:Button  CssClass= "btn btn-outline-primary" ID="Button3" runat="server" Text="Pedidos Pendientes" BorderStyle="None" OnClick="Button3_Click" />
+                    &nbsp;<asp:Button  CssClass= "btn btn-outline-primary" ID="Button4" runat="server" Text="Cobrar" BorderStyle="None" />
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Carta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mesas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ordenes</a>
-                    </li>
-                </ul>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </div>
-        </nav>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </asp:Panel>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

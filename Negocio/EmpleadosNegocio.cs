@@ -323,7 +323,42 @@ namespace Negocio
         }
 
 
-      
+
+        public int cantidaMesas(Int64 idmesero)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            int cantidad = 0;
+
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "spCantidadMesas " + idmesero;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (!Convert.IsDBNull(lector["cantidad"]))
+                        cantidad = lector.GetInt32(0);
+                }
+
+                return cantidad;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
 
     }

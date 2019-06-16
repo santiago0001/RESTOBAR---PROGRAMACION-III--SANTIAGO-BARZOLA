@@ -16,6 +16,16 @@ namespace WebApplication2
         List<Mesa> listamesas;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Label1.Text == "Seleccione una mesa")
+            {
+                btnLiberar.Visible = false;
+            }
+            else
+            {
+                btnLiberar.Visible = true;
+            }
+
+
             ddlmesas.AutoGenerateSelectButton = true;
             cargarGrilla();
         }
@@ -31,14 +41,36 @@ namespace WebApplication2
         }
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnLiberar.Visible = true;
+
+            if (ddlmesas.SelectedRow.Cells[6].Text == "Libre")
+            {
+                btnLiberar.Text = "Ocupar";
+            }
+            else
+            {
+                btnLiberar.Text = "Liberar";
+            }
             Label1.Text = "Mesa "+ ddlmesas.SelectedRow.Cells[2].Text;
         }
 
         protected void btnLiberar_Click(object sender, EventArgs e)
         {
             if (ddlmesas.SelectedRow != null) { 
-            negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), false);
-            cargarGrilla();
+                
+                if (btnLiberar.Text=="Liberar")
+                {
+                    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), false);
+                    btnLiberar.Text = "Ocupar";
+                }
+                else if (btnLiberar.Text == "Ocupar")
+                {
+                    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), true);
+                    btnLiberar.Text = "Liberar";
+                }
+
+
+                cargarGrilla();
             }
         }
 

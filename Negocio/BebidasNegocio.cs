@@ -34,7 +34,7 @@ namespace Negocio
                     nuevo.id = lector.GetInt64(0);
                     //  nuevo.idMarca = lector.GetInt64(1);
                     nuevo.Nombre = lector.GetString(1);
-                    nuevo.Precio = lector.GetDecimal(3);
+                    nuevo.Precio =lector.GetDecimal(3);
                     nuevo.Copa = lector.GetBoolean(4);
                     // nuevo.marca.Nombre = lector.GetString(6);
                     nuevo.marca = new Marca();

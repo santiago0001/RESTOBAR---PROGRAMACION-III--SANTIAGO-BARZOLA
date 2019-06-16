@@ -17,22 +17,14 @@
         <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/imagen/fondo2.png" Height="381px">
            <br/>
               <div align= "center"> 
-            <FONT 'impact' SIZE=30 COLOR="White" >Bienvenido <asp:Label ID="LabNombre" runat="server" Text=" " COLOR="White"></asp:Label></FONT > <br/><br/>
+            <FONT 'impact' SIZE=30 COLOR="White" >Bienvenido <asp:Label ID="LabNombre" runat="server" Text=" " COLOR="White"></asp:Label> 
+                  <br />
+                  <asp:Label ID="Label1" runat="server" Text="Hoy tenes "></asp:Label>
+                      <asp:Label ID="labCant" runat="server" Text="  "></asp:Label>
+                          <asp:Label ID="Label3" runat="server" Text="mesas asignadas "></asp:Label>
 
-            <asp:Button CssClass="btn btn-primary"  ID="ButPedido" runat="server" Text="Cargar pedido" OnClick="ButPedido_Click1"  /> <br/>
+                  </FONT >
                   <br />
-                  <asp:Button  CssClass="btn btn-primary" ID="btnLiberar" runat="server" Text="Liberar mesa" OnClick="btnLiberar_Click" />
-                  <br />
-                  <br />
-                  <asp:Button  CssClass="btn btn-primary" ID="btnOcupar" runat="server" Text="Ocupar mesa" />
-                  <br />
-                  <br/>
-                  <asp:Button  CssClass="btn btn-primary" ID="btnPedPen" runat="server" Text="Pedidos pendientes" />
-                   <br />
-                  <br/>
-                  <asp:Button  CssClass="btn btn-primary" ID="btnCobrar" runat="server" Text="Cobrar" />
-                  <br />
-                  <br/>
     <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" OnTextChanged="DropDownList1_TextChanged" ViewStateMode="Enabled" Height="28px">
           </asp:DropDownList>
         </div>

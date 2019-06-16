@@ -173,5 +173,93 @@ namespace Negocio
             }
         }
 
+
+        public List<PedidoPlato> ListarPlatoPendiente(Int64 idMesa)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<PedidoPlato> listado = new List<PedidoPlato>();
+            PedidoPlato nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "spPlatosPendientes " + idMesa;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new PedidoPlato();
+                    nuevo.Id = lector.GetInt64(0);
+                    nuevo.CantPla = lector.GetInt64(3);
+                    nuevo.NomPlato = lector.GetString(1);
+                    nuevo.precioPla = lector.GetDecimal(2);
+                    nuevo.Entregado = "Pendiente";
+               
+
+                    listado.Add(nuevo);
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public List<PedidoBebida> ListarBebidasPendiente(Int64 idMesa)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<PedidoBebida> listado = new List<PedidoBebida>();
+            PedidoBebida nuevo;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "spBebidasPendientes " + idMesa;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new PedidoBebida();
+                    nuevo.Id = lector.GetInt64(0);
+                    nuevo.Cant = lector.GetInt64(4);
+                    nuevo.Nom = lector.GetString(1);
+                    nuevo.precio = lector.GetDecimal(3);
+                    nuevo.Descr = lector.GetString(2);
+                    nuevo.Entregado = "Pendiente";
+
+
+                    listado.Add(nuevo);
+                }
+
+                return listado;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
     }
 }

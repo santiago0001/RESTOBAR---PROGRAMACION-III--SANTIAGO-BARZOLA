@@ -32,7 +32,7 @@ namespace WebApplication2
                 droplist();
 
             }
-
+            labCant.Text = negocioEm.cantidaMesas(Convert.ToInt64(DropDownList1.SelectedItem.Value)).ToString();
 
 
         }
@@ -65,22 +65,6 @@ namespace WebApplication2
             //Session["id"] = DropDownList1.SelectedItem.Text;
 
 
-
-        }
-
-        protected void ButPedido_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/mesapagg.aspx");
-        }
-
-        protected void ButPedido_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("~/mesapagg.aspx");
-        }
-
-        protected void btnLiberar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Liberar.aspx");
 
         }
     }
