@@ -10,11 +10,11 @@ namespace Dominio
     {
         public Int64 Id { get; set; }
 
-        public string Nom { get; set; }
-        public string Descr { get; set; }
-        public decimal precio { get; set; }
-        public Int64 Cant { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public Int64 Cantiadad { get; set; }
 
-        public string Entregado { get; set; }
+        public string Estado { get; set; }
     }
 }

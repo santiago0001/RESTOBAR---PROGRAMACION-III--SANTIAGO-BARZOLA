@@ -132,3 +132,6 @@ C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\We
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\obj\Debug\WebApplication2.csproj.CopyComplete
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\bin\itextsharp.dll
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\bin\itextsharp.pdb
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WebApplication2\bin\itextsharp.xml

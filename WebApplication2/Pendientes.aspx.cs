@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
 
+
 namespace WebApplication2
 {
     
@@ -29,23 +30,25 @@ namespace WebApplication2
                 Cargarddlmesas();
                 
             }
+            if (ddlMesas.SelectedItem != null) { 
             PlatosPendientes();
             BebidasPendientes();
             labMesa.Text = "Mesa " + ddlMesas.SelectedItem.Value;
+            }
         }
 
         protected void Cargarddlmesas()
         {
-            MesaLocal = negome.mesasXmesero(Convert.ToInt64((string)Session["id"]));
+            MesaLocal = negome.mesasXmesero(Convert.ToInt64((Int64)Session["id"]));
             ddlMesas.DataSource = null;
             ddlMesas.DataSource = MesaLocal;
-            ddlMesas.DataTextField = "IdMesa";
-            ddlMesas.DataValueField = "IdMesa";
+            ddlMesas.DataTextField = "mesa";
+            ddlMesas.DataValueField = "mesa";
             ddlMesas.DataBind();
         }
 
         protected void PlatosPendientes()
-        {
+        { 
             listaPendientesPla = negope.ListarPlatoPendiente(Convert.ToInt64(ddlMesas.SelectedItem.Value));
             gbPlatos.DataSource = null;
             gbPlatos.DataSource = listaPendientesPla;
@@ -70,6 +73,44 @@ namespace WebApplication2
         {
             labBeb.Text = "Pedido N° " + gvBebidas.SelectedRow.Cells[1].Text
                 + ",  " + gvBebidas.SelectedRow.Cells[2].Text;
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            if ( listaPendientesPla.Count>0)
+            {
+                negope.Entregado(Convert.ToInt64(gbPlatos.SelectedRow.Cells[1].Text));
+                PlatosPendientes();
+                labPedpla.Text = " ";
+            }
+                
+
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        { if ( listaBebidasPend.Count > 0) {
+                negope.Entregado(Convert.ToInt64(gvBebidas.SelectedRow.Cells[1].Text));
+                BebidasPendientes();
+                labBeb.Text =  "    ";
+            }
+            
+        }
+
+        protected void gbPlatos_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[1].Visible = false;
+            e.Row.Cells[2].Width = 200;
+
+        }
+
+        protected void gvBebidas_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[1].Visible = false;
+
+        }
+
+        protected void gbPlatos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
         }
     }
 }

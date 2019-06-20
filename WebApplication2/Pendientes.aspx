@@ -30,7 +30,7 @@
                          
                            <tr align="left">
                                <td><FONT 'impact' SIZE=6 COLOR="White" ><b>Platos pendientes</b></FONT > <b>
-                                   <asp:GridView ID="gbPlatos" runat="server" BackColor="#DEBA84" OnSelectedIndexChanged="gdvPedido_SelectedIndexChanged" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+                                   <asp:GridView ID="gbPlatos" runat="server" BackColor="#DEBA84" OnSelectedIndexChanged="gdvPedido_SelectedIndexChanged" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" OnRowCreated="gbPlatos_RowCreated" OnRowDataBound="gbPlatos_RowDataBound">
                                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                                        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                                        <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
@@ -43,7 +43,7 @@
                                    </asp:GridView>
                                 <FONT 'impact' SIZE=3 COLOR="White" >   <asp:Label ID="labPedpla" runat="server" Text="Seleccione un plato"></asp:Label> </font>
                                    </b>
-                                   <asp:Button ID="Button5" runat="server" Text="Entregado" CssClass="btn btn-primary" />
+                                   <asp:Button ID="Button5" runat="server" Text="Entregado" CssClass="btn btn-primary" OnClick="Button5_Click" />
                                </td>
                                
                            </tr>
@@ -56,7 +56,7 @@
                          
                            <tr align="left">
                                <td><FONT 'impact' SIZE=6 COLOR="White" ><b>Bebidas pendientes</b></FONT > <b>
-                                   <asp:GridView ID="gvBebidas" runat="server" BackColor="#DEBA84" OnSelectedIndexChanged="gdvPedidoBebida_SelectedIndexChanged" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+                                   <asp:GridView ID="gvBebidas" runat="server" BackColor="#DEBA84" OnSelectedIndexChanged="gdvPedidoBebida_SelectedIndexChanged" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" OnRowCreated="gvBebidas_RowCreated">
                                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                                        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                                        <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
@@ -70,7 +70,7 @@
                                    
                                    </b>
                               <FONT 'impact' SIZE=3 COLOR="White" >     <asp:Label ID="labBeb" runat="server" Text="Seleccione una bebida"></asp:Label>  </font>
-                                   <asp:Button ID="Button6" runat="server" Text="Entregado" CssClass="btn btn-primary" />
+                                   <asp:Button ID="Button6" runat="server" Text="Entregado" CssClass="btn btn-primary" OnClick="Button6_Click" />
                                </td>
                                
                            </tr>

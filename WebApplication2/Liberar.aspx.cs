@@ -32,7 +32,7 @@ namespace WebApplication2
 
         protected void cargarGrilla()
         {
-            listamesas = negome.mesasXmesero(Convert.ToInt64((string)Session["id"]));
+            listamesas = negome.mesasXmesero(Convert.ToInt64((Int64)Session["id"]));
 
             ddlmesas.DataSource = listamesas;
             ddlmesas.DataBind();
@@ -77,6 +77,16 @@ namespace WebApplication2
         protected void btnAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Principal.aspx");
+        }
+
+        protected void ddlmesas_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[1].Visible = false;
+            e.Row.Cells[3].Visible = false;
+            e.Row.Cells[4].Visible = false;
+            e.Row.Cells[5].Visible = false;
+
+
         }
     }
 }

@@ -40,9 +40,9 @@
 
             <asp:Panel ID="Panel3" runat="server" BackImageUrl="~/imagen/fondo2.png" CssClass="auto-style4" Height="1040px">
                
-                            <asp:Button ID="butAtras" class="btn btn-light" runat="server" OnClick="butAtras_Click" Text="Atras" />
-
                  <br />                  
+             <font "impact" color="white" size="5">   Seleccione una mesa</font> <asp:DropDownList ID="ddlMesa" runat="server" AutoPostBack="True" Height="29px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="61px">
+                </asp:DropDownList> <br/>
                 <b><font "impact" color="white" size="30">
                     <asp:Label ID="Label3" runat="server" Text="Carga de pedidos" top="2" ></asp:Label>
                 </font></b>                
@@ -53,7 +53,7 @@
 
                 &nbsp;
 
-                </font></b>
+                </font> </b>
                  <br />
 
                 <br /><br />
@@ -94,7 +94,7 @@
 
                      </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad</b></FONT ></td></tr>
                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b><asp:TextBox ID="txtcantbeb" runat="server" Width="155px"></asp:TextBox></b></FONT ></td></tr>
-              </tr> <tr><td class="auto-style2"><asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg"  OnClick="butCargabeb_Click" Text="Cargar bebida" /></b></FONT ></td></tr>
+              </tr> <tr><td class="auto-style2"><asp:Button ID="btncargaBeb" runat="server" class="btn btn-primary btn-lg"  OnClick="butCargabeb_Click" Text="Cargar bebida" /></b></FONT ></td></tr>
                 </table>
 
                 <br />

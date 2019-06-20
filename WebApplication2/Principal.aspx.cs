@@ -20,20 +20,15 @@ namespace WebApplication2
         private List<Empleado> listaEmpleados;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (IsPostBack == false)
             {
 
-                listaEmpleados = negocioEm.listarMeseros();
-                DropDownList1.DataSource = null;
-                DropDownList1.DataSource = listaEmpleados;
-                DropDownList1.DataTextField = "Nombre";
-                DropDownList1.DataValueField = "id";
-                DropDownList1.DataBind();
+
                 droplist();
-
             }
-            labCant.Text = negocioEm.cantidaMesas(Convert.ToInt64(DropDownList1.SelectedItem.Value)).ToString();
-
+            labCant.Text = negocioEm.cantidaMesas((Int64)Session["id"]).ToString();
+            
 
         }
 
@@ -41,7 +36,7 @@ namespace WebApplication2
         {
             
         }
-
+     
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -51,20 +46,14 @@ namespace WebApplication2
 
         protected void droplist()
         {
-            LabNombre.Text = DropDownList1.SelectedItem.ToString();
-            Session["id"] = DropDownList1.SelectedItem.Value.ToString();
-            Session["nomMesero"] = DropDownList1.SelectedItem.Text.ToString();
+            LabNombre.Text = (string)Session["nomMesero"];
+          
 
         }
         protected void DropDownList1_TextChanged(object sender, EventArgs e)
         {
 
             droplist();
-
-
-            //Session["id"] = DropDownList1.SelectedItem.Text;
-
-
 
         }
     }

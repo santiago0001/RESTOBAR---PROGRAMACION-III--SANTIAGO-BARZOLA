@@ -25,8 +25,12 @@ namespace WebApplication2
         private List<Plato> listaPlato;
         Plato platoLocal;
 
+
         PedidoNegocio negoPe = new PedidoNegocio();
         private List<PedidoPlato> listaPedido;
+
+        MesaNegocio negome = new MesaNegocio();
+        List<Mesa> listamesa;
 
         private List<PedidoBebida> listaPedidoBebida;
 
@@ -51,16 +55,43 @@ namespace WebApplication2
                 CargaMarcasBeb();
                 CargaBebida();
                 CargarDescripcion();
+                droplist();
             }
-            if (Session["idMesa"] != null) {
-            LabelMesero.Text = Session["idMesa"].ToString();
+            if (Session["idMesa"] != null && ddlMesa.SelectedItem!=null) {
+            LabelMesero.Text = ddlMesa.SelectedItem.Value;
             Session["idtipo"] = ddltipo.SelectedItem.Value;
-            cargarGrilla();
             }
+            mesas();
+            cargarGrilla();
 
+        }
+        protected void mesas()
+        {
+            if (ddlMesa.SelectedItem != null)
+            {
+                LabelMesero.Text = ddlMesa.SelectedItem.ToString();
+                Session["idMesa"] = ddlMesa.SelectedItem.Value.ToString();
+            }
+            else
+            {
+                Label3.Text = " ";
+                Label1.Text = " ";
+                LabelMesero.Text = "No tiene mesas asignadas";
+                btncargaBeb.Visible = false;
+                butCarga.Visible = false;
+            }
         }
         protected void droplist()
         {
+
+            
+                listamesa = negome.mesasXmesero(Convert.ToInt64((Int64)Session["id"]));
+                ddlMesa.DataSource = null;
+                ddlMesa.DataSource = listamesa;
+                ddlMesa.DataTextField = "mesa";
+                ddlMesa.DataValueField = "mesa";
+                ddlMesa.DataBind();
+               
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,16 +177,18 @@ namespace WebApplication2
 
         protected void cargarGrilla ()
         {
-            listaPedido = negoPe.ListarPlatosXmesa(Convert.ToInt64(Session["idMesa"].ToString()));
+            if (Session["idMesa"] != null)
+            {
+                listaPedido = negoPe.ListarPlatosXmesa(Convert.ToInt64(Session["idMesa"].ToString()));
 
-            gdvPedido.DataSource = listaPedido;
-            gdvPedido.DataBind();
+                gdvPedido.DataSource = listaPedido;
+                gdvPedido.DataBind();
 
-            listaPedidoBebida = negoPe.ListarBebidasPedido(Convert.ToInt64(Session["idMesa"].ToString()));
+                listaPedidoBebida = negoPe.ListarBebidasPedido(Convert.ToInt64(Session["idMesa"].ToString()));
 
-            gvBebidas.DataSource = listaPedidoBebida;
-            gvBebidas.DataBind();
-
+                gvBebidas.DataSource = listaPedidoBebida;
+                gvBebidas.DataBind();
+            }
 
         }
         protected void gdvPedido_SelectedIndexChanged(object sender, EventArgs e)

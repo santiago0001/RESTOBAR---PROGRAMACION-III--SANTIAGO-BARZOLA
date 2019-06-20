@@ -11,27 +11,48 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+                        
         }
 
         protected void btnInicio_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Principal.aspx");
+        { 
+                Response.Redirect("~/Principal.aspx");
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/mesapagg.aspx");
+
+            Response.Redirect("Pedidos.aspx");
+
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Liberar.aspx");
+         
+                Response.Redirect("~/Liberar.aspx");
+            
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/pendientes.aspx");
+            
+                Response.Redirect("~/pendientes.aspx");
+            
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            
+                Response.Redirect("~/Cobrar.aspx");
+            
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["id"] = 0;
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

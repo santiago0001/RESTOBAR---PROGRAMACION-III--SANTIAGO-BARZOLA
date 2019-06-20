@@ -31,17 +31,17 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Mesa();
-                    nuevo.IdMesa = lector.GetInt64(0);
+                    nuevo.mesa = lector.GetInt64(0);
                     nuevo.NomApe = lector.GetString(1);
                     nuevo.IdMesero = lector.GetInt64(2);
-                    nuevo.estado = lector.GetBoolean(3);
+                    nuevo.est = lector.GetBoolean(3);
                     nuevo.ocupado = lector.GetBoolean(4);
                     if (nuevo.ocupado)
-                    { nuevo.stOcupado = "Ocupado"; }
-                    else { nuevo.stOcupado = "Libre"; }
+                    { nuevo.Estado = "Ocupado"; }
+                    else { nuevo.Estado = "Libre"; }
 
 
-                    if (!nuevo.estado)
+                    if (!nuevo.est)
                     {
                         listado.Add(nuevo);
                     }
@@ -82,17 +82,17 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Mesa();
-                    nuevo.IdMesa = lector.GetInt64(0);
+                    nuevo.mesa = lector.GetInt64(0);
                     nuevo.NomApe = lector.GetString(1);
                     nuevo.IdMesero = lector.GetInt64(2);
-                    nuevo.estado = lector.GetBoolean(3);
+                    nuevo.est = lector.GetBoolean(3);
                     nuevo.ocupado = lector.GetBoolean(4);
                     if (nuevo.ocupado)
-                    { nuevo.stOcupado = "Ocupado"; }
-                    else { nuevo.stOcupado = "Libre"; }
+                    { nuevo.Estado = "Ocupado"; }
+                    else { nuevo.Estado = "Libre"; }
 
 
-                    if (nuevo.estado)
+                    if (nuevo.est)
                     {
                         listado.Add(nuevo);
                     }
@@ -145,7 +145,7 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearConsulta("update mesa set idmesero=@idmesero where id=" + mesa.IdMesa.ToString());
+                accesoDatos.setearConsulta("update mesa set idmesero=@idmesero where id=" + mesa.mesa.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@idmesero", em.Id);
 
@@ -169,7 +169,7 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearConsulta("update mesa set estado=0 where id=" + mesa.IdMesa.ToString());
+                accesoDatos.setearConsulta("update mesa set estado=0 where id=" + mesa.mesa.ToString());
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
 
@@ -190,7 +190,7 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearConsulta("update mesa set estado=1 where id=" + mesa.IdMesa.ToString());
+                accesoDatos.setearConsulta("update mesa set estado=1 where id=" + mesa.mesa.ToString());
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
 
@@ -225,11 +225,11 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Mesa();
-                    nuevo.IdMesa = lector.GetInt64(0);
+                    nuevo.mesa = lector.GetInt64(0);
                     nuevo.ocupado = lector.GetBoolean(1);
                     if (nuevo.ocupado)
-                    { nuevo.stOcupado = "Ocupado"; }
-                    else { nuevo.stOcupado = "Libre"; }
+                    { nuevo.Estado = "Ocupado"; }
+                    else { nuevo.Estado = "Libre"; }
 
 
                         listado.Add(nuevo);

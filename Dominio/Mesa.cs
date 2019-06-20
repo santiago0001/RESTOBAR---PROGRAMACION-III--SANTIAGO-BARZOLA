@@ -9,11 +9,11 @@ namespace Dominio
    public class Mesa
     {
         public Int64 IdMesero { get; set; }
-        public Int64 IdMesa { get; set; }
+        public Int64 mesa { get; set; }
         public string NomApe { get; set; }
         public Boolean ocupado { get; set; }
-        public Boolean estado { get; set; }
-        public string stOcupado { get; set; }
+        public Boolean est { get; set; }
+        public string Estado { get; set; }
 
 
     }

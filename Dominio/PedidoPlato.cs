@@ -12,12 +12,11 @@ namespace Dominio
 
         public Int64 Id { get; set; }
 
-        public string NomPlato  { get; set; }
-        public string DescripPla { get; set; }
-        public decimal precioPla { get; set; }
-        public Int64 CantPla { get; set; }
-
-        public string Entregado { get; set; }
+        public string Plato  { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public Int64 Cantidad { get; set; }
+        public string Estado { get; set; }
 
 
 
