@@ -168,10 +168,23 @@ namespace WebApplication2
 
         protected void butCarga_Click(object sender, EventArgs e)
         {
-            cargarGrilla();
-            negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value), 
-                Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text));
-            cargarGrilla();
+            int val = 0;
+
+            if (int.TryParse(txtCant.Text, out val))
+            {
+                LabErrorPla.Text = "*";
+                cargarGrilla();
+                negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value),
+                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text));
+                cargarGrilla();
+            }
+               else
+            {
+                LabErrorPla.Text = "Debe ingresar numeros";
+            }
+
+
+                       
 
         }
 
@@ -203,10 +216,21 @@ namespace WebApplication2
 
         protected void butCargabeb_Click(object sender, EventArgs e)
         {
-            cargarGrilla();
+            int val = 0;
+
+            if (int.TryParse(txtcantbeb.Text, out val))
+            {
+                LabErrorBe.Text = "*";
+                cargarGrilla();
             negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
                 Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text));
             cargarGrilla();
+            }
+            else
+            {
+                LabErrorBe.Text = "Debe ingresar numeros";
+            }
+
         }
         protected void CargarDescripcion()
         {
@@ -222,6 +246,11 @@ namespace WebApplication2
         }
         protected void ddlbebida_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        protected void txtcantbeb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
