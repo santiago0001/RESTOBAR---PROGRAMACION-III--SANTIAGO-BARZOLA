@@ -121,7 +121,7 @@ namespace Negocio
             }
         }
 
-        public void AgregarPedidoPla(Int64 idplato, Int64 idmesa, Int64 cantidad)
+        public void AgregarPedidoPla(Int64 idplato, Int64 idmesa, Int64 cantidad, Int64 idmesero, decimal precio)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -130,7 +130,8 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "AgregarPlatoPedido "+ idplato + ","+ idmesa +","+ cantidad;
+                comando.CommandText = "AgregarPlatoPedido "+ idplato + ","+ idmesa +","+ cantidad + "," 
+                    +idmesero+","+precio;
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -147,7 +148,7 @@ namespace Negocio
             }
         }
 
-        public void AgregarBebidaPla(Int64 idbebida, Int64 idmesa, Int64 cantidad)
+        public void AgregarBebidaPla(Int64 idbebida, Int64 idmesa, Int64 cantidad, Int64 idmesero)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -156,7 +157,8 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "AgegarBebidaPedido " + idmesa + "," + idbebida + "," + cantidad;
+                comando.CommandText = "AgegarBebidaPedido " + idmesa + "," + idbebida + "," + cantidad
+                    + ","+ idmesero;
                 comando.Connection = conexion;
                 conexion.Open();
 

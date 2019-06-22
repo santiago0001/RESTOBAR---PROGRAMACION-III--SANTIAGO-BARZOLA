@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp4.Bebidas;
 using WindowsFormsApp4.Empleados;
-
+using Dominio;
 
 namespace WindowsFormsApp4
 {
     public partial class Principal : Form
     {
+        List<EmpleadoEstadistica> ListaEmpleado;
         public Principal()
         {
             InitializeComponent();
@@ -88,7 +89,6 @@ namespace WindowsFormsApp4
 
         private void Principal_Load(object sender, EventArgs e)
         {
-
         }
     }
     }

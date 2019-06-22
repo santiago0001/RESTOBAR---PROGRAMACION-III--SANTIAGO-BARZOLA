@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.CHpedidosxMesa = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.CHpedidosxMesa)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -91,11 +97,38 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // CHpedidosxMesa
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.CHpedidosxMesa.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.CHpedidosxMesa.Legends.Add(legend1);
+            this.CHpedidosxMesa.Location = new System.Drawing.Point(175, 17);
+            this.CHpedidosxMesa.Name = "CHpedidosxMesa";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.CHpedidosxMesa.Series.Add(series1);
+            this.CHpedidosxMesa.Size = new System.Drawing.Size(559, 396);
+            this.CHpedidosxMesa.TabIndex = 8;
+            this.CHpedidosxMesa.Text = "chart1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(27, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 348);
+            this.ClientSize = new System.Drawing.Size(746, 414);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.CHpedidosxMesa);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button1);
@@ -108,6 +141,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restoapp";
             this.Load += new System.EventHandler(this.Principal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CHpedidosxMesa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,6 +153,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CHpedidosxMesa;
+        private System.Windows.Forms.Button button2;
     }
 }
 

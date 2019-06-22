@@ -20,7 +20,8 @@ namespace WebApplication2
         private List<Empleado> listaEmpleados;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+
             if (IsPostBack == false)
             {
 

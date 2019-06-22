@@ -13,7 +13,6 @@ namespace WebApplication2
         EmpleadosNegocio negoem = new EmpleadosNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
         }
 

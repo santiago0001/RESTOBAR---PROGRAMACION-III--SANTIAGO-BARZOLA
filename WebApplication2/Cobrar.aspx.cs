@@ -32,6 +32,7 @@ namespace WebApplication2
         {
             if (IsPostBack == false)
             {
+              //  LabelExito.Text = "sss ";
                 droplist();
             }
             if (ddlmesa.SelectedItem != null)
@@ -42,6 +43,8 @@ namespace WebApplication2
                 CobrarTotal();
                 LabTotal.Text = " $" + Convert.ToString(total);
             }
+                            
+
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +122,7 @@ namespace WebApplication2
 
             }
         else {
+                negome.LiberarMesa(Convert.ToInt64(ddlmesa.SelectedItem.Value), false);
                 negocio.CobrarPedidos(Convert.ToInt64 (ddlmesa.SelectedItem.Value));
             int columnsCount = GVplatos.HeaderRow.Cells.Count;
             // Create the PDF Table specifying the number of columns
@@ -129,7 +133,7 @@ namespace WebApplication2
                 pdfTable.AddCell("       ");
                 pdfTable.AddCell("       ");
                 pdfTable.AddCell("       ");
-
+                Session["cantidadColumnas"] = columnsCount;
                 if (GVplatos.HeaderRow != null) {
                 // Loop thru each cell in GrdiView header row
                 foreach (TableCell gridViewHeaderCell in GVplatos.HeaderRow.Cells)
@@ -221,16 +225,19 @@ namespace WebApplication2
 
             PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
 
+                LabelExito.Text = "COBRADO CON EXITO, se te descargo en PDF el detalle ";
+                PlatosCobrar();
+                BebidasCobrar();
             pdfDocument.Open();
             pdfDocument.Add(pdfTable);
             pdfDocument.Close();
+                Response.ContentType = "application/pdf";
+                Response.AppendHeader("content-disposition",
+                    "attachment;filename=Employees.pdf");
+                Response.Write(pdfTable);
+                Response.Flush();
+                Response.End();
 
-            Response.ContentType = "application/pdf";
-            Response.AppendHeader("content-disposition",
-                "attachment;filename=Employees.pdf");
-            Response.Write(pdfDocument);
-            Response.Flush();
-            Response.End();
             }
         }
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BebidasNegocio.cs" />
     <Compile Include="EmpleadosNegocio.cs" />
+    <Compile Include="Estadisticas.cs" />
     <Compile Include="MarcaNegocio.cs" />
     <Compile Include="MesaNegocio.cs" />
     <Compile Include="PedidoNegocio.cs" />

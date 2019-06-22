@@ -161,11 +161,11 @@ namespace WindowsFormsApp4.Bebidas
                     listaMesasLocal = negome.listarMesasEliminada();
                     dgvPapelera.DataSource = listaMesasLocal;
                     dgvPapelera.Columns["IdMesero"].Visible = false;
-                    dgvPapelera.Columns["estado"].Visible = false;
+                    dgvPapelera.Columns["est"].Visible = false;
                     dgvPapelera.Columns["ocupado"].Visible = false;
                     dgvPapelera.Columns["NomApe"].HeaderText = "Nombre y apellido";
-                    dgvPapelera.Columns["IdMesa"].HeaderText = "N° Mesa";
-                    dgvPapelera.Columns["stOcupado"].HeaderText = "Estado";
+                    dgvPapelera.Columns["mesa"].HeaderText = "N° Mesa";
+                    dgvPapelera.Columns["Estado"].HeaderText = "Estado";
 
                 }
 

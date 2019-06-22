@@ -84,11 +84,11 @@ namespace WindowsFormsApp4
             ListaMesaLocal = negome.listarMesa();
             dgvmesa.DataSource = ListaMesaLocal;
             dgvmesa.Columns["IdMesero"].Visible = false;
-            dgvmesa.Columns["estado"].Visible = false;
+            dgvmesa.Columns["est"].Visible = false;
             dgvmesa.Columns["ocupado"].Visible = false;
             dgvmesa.Columns["NomApe"].HeaderText = "Nombre y apellido";
-            dgvmesa.Columns["IdMesa"].HeaderText = "N° Mesa";
-            dgvmesa.Columns["stOcupado"].HeaderText = "Estado";
+            dgvmesa.Columns["mesa"].HeaderText = "N° Mesa";
+            dgvmesa.Columns["Estado"].HeaderText = "Estado";
 
 
 
@@ -140,7 +140,7 @@ namespace WindowsFormsApp4
 
         private void Dgvmesa_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.dgvmesa.Columns[e.ColumnIndex].Name == "stOcupado")
+            if (this.dgvmesa.Columns[e.ColumnIndex].Name == "Estado")
             {
                 if (e.Value.ToString() == "Ocupado")
                 {
@@ -207,7 +207,7 @@ namespace WindowsFormsApp4
             comboMese.SelectedIndex = comboMese.FindString(ListaMeserosLocal[aux].Nombre);
             comboMese.Text = ListaMeserosLocal[aux].Nombre;
             comboOrdenar();
-            labelmesa.Text = "Mesa"+ mesaLocal.IdMesa.ToString();
+            labelmesa.Text = "Mesa"+ mesaLocal.mesa.ToString();
             
 
         }

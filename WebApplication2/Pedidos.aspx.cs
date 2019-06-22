@@ -175,7 +175,8 @@ namespace WebApplication2
                 LabErrorPla.Text = "*";
                 cargarGrilla();
                 negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value),
-                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text));
+                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text),
+                    Convert.ToInt64(Session["id"]), Convert.ToDecimal(labPrecio.Text));
                 cargarGrilla();
             }
                else
@@ -184,7 +185,7 @@ namespace WebApplication2
             }
 
 
-                       
+            negome.LiberarMesa(Convert.ToInt64(Session["idMesa"]),true);     
 
         }
 
@@ -222,14 +223,17 @@ namespace WebApplication2
             {
                 LabErrorBe.Text = "*";
                 cargarGrilla();
-            negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
-                Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text));
+                negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
+                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text),
+                     Convert.ToInt64(Session["id"])
+                );
             cargarGrilla();
             }
             else
             {
                 LabErrorBe.Text = "Debe ingresar numeros";
             }
+            negome.LiberarMesa(Convert.ToInt64(Session["idMesa"]), true);
 
         }
         protected void CargarDescripcion()
