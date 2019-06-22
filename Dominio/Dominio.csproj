@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bebida.cs" />
+    <Compile Include="DiaEstadistica.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoEstadistica.cs" />
     <Compile Include="Insumo.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="PedidoBebida.cs" />
     <Compile Include="PedidoPlato.cs" />
     <Compile Include="Plato.cs" />
+    <Compile Include="PlatoEstadistica.cs" />
     <Compile Include="PlatoxPedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Silla.cs" />
