@@ -54,12 +54,13 @@ namespace Negocio
             PlatoLocal.Descripcion = txtDesc.Text;
                 PlatoLocal.Nombre = txtNombrePla.Text;
                 PlatoLocal.Precio = Convert.ToDecimal(txtPrecioPla.Text);
+            PlatoLocal.Cantidad = Convert.ToInt32(txtCant.Text);
                // PlatoLocal.Tipo = comboBoxPla.Text;
 
 
 
 
-                //si es existente 
+            //si es existente 
             if (PlatoLocal.id != 0)
                 {
                     negocio.modificarPlato(PlatoLocal);
@@ -122,18 +123,19 @@ namespace Negocio
                 txtPrecioPla.Text = PlatoLocal.Precio.ToString();
                 txtDesc.Text = PlatoLocal.Descripcion;
                 comboBoxPla.SelectedIndex = comboBoxPla.FindString(PlatoLocal.Tipo.nombre);
-
+                txtCant.Text = PlatoLocal.Cantidad.ToString();
             }
             
             cargarGrilla();
             LlenarComboVajilla();
             // da de baja botones de plato por vajilla
             if (PlatoLocal==null)
-            {
+            { 
                 button1.Enabled = false;
                 comboVajilla.Enabled = false;
                 dgvVajilla.Enabled = false;
                 button2.Enabled = false;
+                grupVajilla.Visible = false;
             }
 
 

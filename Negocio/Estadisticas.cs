@@ -11,7 +11,7 @@ namespace Negocio
 {
   public   class Estadisticas
     {
-        public List<EmpleadoEstadistica> listaEmpleadosCan()
+        public List<EmpleadoEstadistica> listaEmpleadosCan(string inicio, string fin)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -23,7 +23,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
-                comando.CommandText = "select * from EstadisticaEmpleados order by cant desc";
+                comando.CommandText = " spEstadisticaEmpleados '"+inicio+ "','"+ fin+"'";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();

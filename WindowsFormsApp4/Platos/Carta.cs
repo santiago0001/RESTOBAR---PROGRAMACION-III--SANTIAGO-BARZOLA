@@ -44,7 +44,7 @@ namespace WindowsFormsApp4
                 listarPlatoLocal = negocio.listarPlatos();
                 dgvCarta.DataSource = listarPlatoLocal;
                 dgvCarta.Columns["id"].Visible = false;
-                dgvCarta.Columns["cantidad"].Visible = false;
+              //  dgvCarta.Columns["cantidad"].Visible = false;
                 dgvCarta.Columns["estado"].Visible = false;
                 dgvCarta.Columns["nombre"].DisplayIndex = 0;
                 dgvCarta.Columns["descripcion"].DisplayIndex = 1;

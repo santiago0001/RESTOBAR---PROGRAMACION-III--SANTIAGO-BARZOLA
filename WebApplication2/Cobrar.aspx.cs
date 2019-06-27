@@ -124,9 +124,22 @@ namespace WebApplication2
         else {
                 negome.LiberarMesa(Convert.ToInt64(ddlmesa.SelectedItem.Value), false);
                 negocio.CobrarPedidos(Convert.ToInt64 (ddlmesa.SelectedItem.Value));
-            int columnsCount = GVplatos.HeaderRow.Cells.Count;
-            // Create the PDF Table specifying the number of columns
-            PdfPTable pdfTable = new PdfPTable(columnsCount);
+                int columnsCount = 0;
+                if (GVplatos.HeaderRow == null)
+                {
+                    columnsCount = GVbebidas.HeaderRow.Cells.Count;
+                }
+                else if (GVbebidas.HeaderRow == null)
+                {
+                    columnsCount = GVplatos.HeaderRow.Cells.Count;
+                }
+                else
+                {
+                    columnsCount = GVbebidas.HeaderRow.Cells.Count + GVplatos.HeaderRow.Cells.Count;
+                }
+
+                // Create the PDF Table specifying the number of columns
+                PdfPTable pdfTable = new PdfPTable(columnsCount);
                 pdfTable.AddCell("       Total= " );
                 pdfTable.AddCell("$" + total);
                 pdfTable.AddCell("       ");

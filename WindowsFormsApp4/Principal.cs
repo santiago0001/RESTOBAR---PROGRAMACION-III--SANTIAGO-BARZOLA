@@ -81,10 +81,41 @@ namespace WindowsFormsApp4
            
         }
 
+
+
+        private void loadFecha(bool error)
+        {
+            if (error==false)
+            {
+                label3.ForeColor = Color.Black;
+                label3.Text = "Desde el" + dateDesde.Value.Date.ToString("dd/MM/yyyy") + " hasta el "
+                        + dateHasta.Value.Date.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                label3.Text = "LA FECHA 'DESDE' TIENE QUE SER MENOR QUE 'HASTA' ";
+                label3.ForeColor = Color.Red;
+            }
+            
+        }
         private void Principal_Load(object sender, EventArgs e)
         {
+            
+            dateDesde.Value = DateTime.Today.AddDays(-7);
+            loadFecha(false);
+
             btnPedidosxEm.Enabled = false;
-            ListaEmpleado = negoest.listaEmpleadosCan();
+            RecargarCharts();
+        }
+
+        private void AdministracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RecargarCharts()
+        {
+            ListaEmpleado = negoest.listaEmpleadosCan(dateDesde.Value.Date.ToString("yyyy/MM/dd"), dateHasta.Value.Date.ToString("yyyy/MM/dd"));
 
             ChPed.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             ChPed.Titles.Add("PEDIDOS POR MESERO");
@@ -120,7 +151,7 @@ namespace WindowsFormsApp4
             for (int i = 0; i < listaDias.Count; i++)
             {
                 Series serie1 = chart2.Series.Add(listaDias[i].Dia.ToString());
-                serie1.Label = "$"+ listaDias[i].Recaudacion.ToString();
+                serie1.Label = "$" + listaDias[i].Recaudacion.ToString();
                 serie1.Points.Add(Convert.ToDouble(listaDias[i].Recaudacion));
             }
             btnPedidosxEm.Enabled = false;
@@ -131,10 +162,6 @@ namespace WindowsFormsApp4
             chart2.Visible = false;
         }
 
-        private void AdministracionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void AdministacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -201,6 +228,38 @@ namespace WindowsFormsApp4
             btnDias.Enabled = false; chart2.Visible = true;
             chart1.Visible = false; btnPlatoPop.Enabled = true;
             ChPed.Visible = false; btnPedidosxEm.Enabled = true;
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void Button1_Click_3(object sender, EventArgs e)
+        {
+            
+            if (dateHasta.Value>dateDesde.Value)
+            {
+                loadFecha(false);
+                ChPed.Series.Clear();
+                ChPed.Titles.Clear();
+                chart1.Series.Clear();
+                chart1.Titles.Clear();
+
+                chart2.Series.Clear();
+                chart2.Titles.Clear();
+
+
+                RecargarCharts();
+                
+            }
+            else
+            {
+
+                loadFecha(true);
+            }
+            
         }
     }
     }

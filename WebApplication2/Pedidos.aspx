@@ -71,13 +71,15 @@
                     <tr><td class="auto-style2"><asp:DropDownList ID="ddlPlato" runat="server" class="btn btn-secondary dropdown-toggle" Height="32px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="324px" OnTextChanged="ddlPlato_TextChanged" AutoPostBack="True">
                             </asp:DropDownList> <FONT 'impact' SIZE=6 COLOR="White" ><b>  &nbsp;&nbsp;&nbsp; $ <asp:Label ID="labPrecio" runat="server" Text="Label" color="white"></b></asp:Label></FONT > </td></tr>
 
-                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad</b></FONT ></td></tr>
+                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad<font "impact" color="Red" size="5">
+                        <br />
+                        <asp:Label ID="LabErrorPla" runat="server" Text="*"></asp:Label>
+                        </font></b></FONT ></td></tr>
                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>
 
                         <asp:TextBox ID="txtCant" runat="server" Width="155px"></asp:TextBox>
 
                                                                                            </b>
-                    <FONT 'impact' SIZE=5 COLOR="Red" ><b>   <asp:Label ID="LabErrorPla" runat="server" Text="*"></asp:Label></b></FONT > 
                         </FONT ></td></tr>
               </tr> <tr><td class="auto-style2"><asp:Button ID="butCarga" runat="server" class="btn btn-primary btn-lg"  OnClick="butCarga_Click" Text="Cargar plato" /></b></FONT ></td></tr>
                 </table>
@@ -99,7 +101,7 @@
                             </asp:DropDownList><br/><FONT 'impact' SIZE=3 COLOR="White" ><b> <asp:Label ID="DescBeb" runat="server" Text="Label"></asp:Label> </b></FONT></td></tr>
 
                      </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b>Cantidad<font "impact" color="Red" size="5">
-                                       <asp:Label ID="LabErrorBe" runat="server" Text="*"></asp:Label>
+                                     <br/>  <asp:Label ID="LabErrorBe" runat="server" Text="*"></asp:Label>
                                        </font></b></FONT ></td></tr>
                     </tr> <tr><td class="auto-style2"><FONT 'impact' SIZE=3 COLOR="White" ><b><asp:TextBox ID="txtcantbeb" runat="server" Width="155px" OnTextChanged="txtcantbeb_TextChanged"></asp:TextBox></b>
                                        </FONT ></td></tr>
@@ -117,7 +119,7 @@
                             <br />
                 <br />
                 <br />
-                <br />
+                <br /><br /><br />
 
                 <b>
 

@@ -22,7 +22,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select id,nombre,precio,tipo,idtipo,estado,descripcion From view_platos ";
+                comando.CommandText = "select * From view_platos ";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -37,6 +37,7 @@ namespace Negocio
                     nuevo.Tipo.nombre = lector["tipo"].ToString();
                     nuevo.Tipo.id = (Int64)lector["idtipo"];
                     nuevo.Estado = lector.GetBoolean(5);
+                    nuevo.Cantidad = lector.GetInt32(7);
 
 
 
@@ -84,7 +85,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select id,nombre,precio,tipo,idtipo,estado,descripcion From view_platos ";
+                comando.CommandText = "select * From view_platos ";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -97,9 +98,11 @@ namespace Negocio
                     nuevo.Precio = lector.GetDecimal(2);
                     nuevo.Tipo = new TipoPlato();
                     nuevo.Tipo.nombre = lector["tipo"].ToString();
-                    nuevo.Tipo.id = lector.GetInt64(4);
+                    nuevo.Tipo.id = lector.GetInt64(3);
                     nuevo.Estado = lector.GetBoolean(5);
 
+
+                  nuevo.Cantidad = lector.GetInt32(7);
 
 
 
@@ -144,9 +147,9 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "INSERT INTO plato (NOMBRE,descripcion,tipo,precio,estado) values";
+                comando.CommandText = "INSERT INTO plato (NOMBRE,descripcion,tipo,precio,estado,cantidad) values";
                 comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "'," + nuevo.Tipo.id +
-                     "," + nuevo.Precio + ",1 )";
+                     "," + nuevo.Precio + ",1,"+nuevo.Cantidad+" )";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -168,13 +171,13 @@ namespace Negocio
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
-                accesoDatos.setearConsulta("update plato Set Nombre=@Nombre, precio=@precio,tipo=@tipo, descripcion=@descripcion Where id=" + modificar.id.ToString());
+                accesoDatos.setearConsulta("update plato Set Nombre=@Nombre, precio=@precio,tipo=@tipo, descripcion=@descripcion,cantidad=@cantidad Where id=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
                 accesoDatos.Comando.Parameters.AddWithValue("@Tipo", modificar.Tipo.id);
                 accesoDatos.Comando.Parameters.AddWithValue("@descripcion", modificar.Descripcion);
                 accesoDatos.Comando.Parameters.AddWithValue("@precio", modificar.Precio);
-
+                accesoDatos.Comando.Parameters.AddWithValue("@cantidad", modificar.Cantidad);
 
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
@@ -332,6 +335,43 @@ namespace Negocio
                 conexion.Close();
             }
 }
+
+
+        public int CantidadPlatos(Int64 idmarca)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            int cantidad = 0;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "SPcantidadPa " + idmarca;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (!Convert.IsDBNull(lector["cantidad"]))
+                        cantidad = lector.GetInt32(0);
+                }
+
+                return cantidad;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
 
 
     }

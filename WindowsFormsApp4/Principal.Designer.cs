@@ -54,6 +54,12 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnDias = new System.Windows.Forms.Button();
+            this.dateDesde = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateHasta = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChPed)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -66,7 +72,7 @@
             this.ChPed.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.ChPed.Legends.Add(legend1);
-            this.ChPed.Location = new System.Drawing.Point(151, 27);
+            this.ChPed.Location = new System.Drawing.Point(151, 71);
             this.ChPed.Name = "ChPed";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -121,42 +127,42 @@
             this.bebidasToolStripMenuItem,
             this.vajillaToolStripMenuItem});
             this.administacionToolStripMenuItem.Name = "administacionToolStripMenuItem";
-            this.administacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.administacionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.administacionToolStripMenuItem.Text = "Administar";
             this.administacionToolStripMenuItem.Click += new System.EventHandler(this.AdministacionToolStripMenuItem_Click);
             // 
             // mesasToolStripMenuItem
             // 
             this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
-            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.mesasToolStripMenuItem.Text = "Mesas";
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.MesasToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.EmpleadosToolStripMenuItem_Click);
             // 
             // platosToolStripMenuItem
             // 
             this.platosToolStripMenuItem.Name = "platosToolStripMenuItem";
-            this.platosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.platosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.platosToolStripMenuItem.Text = "Platos";
             this.platosToolStripMenuItem.Click += new System.EventHandler(this.PlatosToolStripMenuItem_Click);
             // 
             // bebidasToolStripMenuItem
             // 
             this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
-            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.bebidasToolStripMenuItem.Text = "Bebidas";
             this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.BebidasToolStripMenuItem_Click);
             // 
             // vajillaToolStripMenuItem
             // 
             this.vajillaToolStripMenuItem.Name = "vajillaToolStripMenuItem";
-            this.vajillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vajillaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.vajillaToolStripMenuItem.Text = "Vajilla";
             this.vajillaToolStripMenuItem.Click += new System.EventHandler(this.VajillaToolStripMenuItem_Click);
             // 
@@ -179,7 +185,7 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(151, 27);
+            this.chart1.Location = new System.Drawing.Point(151, 71);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -195,7 +201,7 @@
             this.chart2.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(151, 27);
+            this.chart2.Location = new System.Drawing.Point(151, 71);
             this.chart2.Name = "chart2";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -218,11 +224,72 @@
             this.btnDias.UseVisualStyleBackColor = true;
             this.btnDias.Click += new System.EventHandler(this.Button1_Click_2);
             // 
+            // dateDesde
+            // 
+            this.dateDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDesde.Location = new System.Drawing.Point(12, 561);
+            this.dateDesde.Name = "dateDesde";
+            this.dateDesde.Size = new System.Drawing.Size(133, 20);
+            this.dateDesde.TabIndex = 16;
+            this.dateDesde.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 545);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Desde el dia";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 584);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Hasta el dia";
+            // 
+            // dateHasta
+            // 
+            this.dateHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateHasta.Location = new System.Drawing.Point(12, 600);
+            this.dateHasta.Name = "dateHasta";
+            this.dateHasta.Size = new System.Drawing.Size(133, 20);
+            this.dateHasta.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(258, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 25);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "label3";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(32, 626);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Aplicar dias";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_3);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 643);
+            this.ClientSize = new System.Drawing.Size(1056, 660);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateHasta);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateDesde);
             this.Controls.Add(this.btnDias);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
@@ -264,6 +331,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button btnDias;
+        private System.Windows.Forms.DateTimePicker dateDesde;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateHasta;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

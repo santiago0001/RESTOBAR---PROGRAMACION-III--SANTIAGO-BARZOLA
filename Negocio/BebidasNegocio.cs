@@ -349,6 +349,46 @@ namespace Negocio
             }
         }
 
+
+        public int CantidadBebidas(Int64 idmarca)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            int cantidad=0;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "SPcantidadBebidas " + idmarca;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (!Convert.IsDBNull(lector["cantidad"]))
+                        cantidad = lector.GetInt32(0);
+
+                }
+
+                return cantidad;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
+
+
     }
 
 

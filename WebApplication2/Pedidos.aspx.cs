@@ -37,6 +37,7 @@ namespace WebApplication2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (IsPostBack == false)
             {
                 listaTipo = negotipo.listarTipoPlato();
@@ -61,9 +62,13 @@ namespace WebApplication2
             LabelMesero.Text = ddlMesa.SelectedItem.Value;
             Session["idtipo"] = ddltipo.SelectedItem.Value;
             }
+            //if ((bool) Session["stock"])
+            //{
+            //    CargaBebida();
+            //    Session["stock"] = false;
+            //}
             mesas();
             cargarGrilla();
-
         }
         protected void mesas()
         {
@@ -84,8 +89,8 @@ namespace WebApplication2
         protected void droplist()
         {
 
-            
-                listamesa = negome.mesasXmesero(Convert.ToInt64((Int64)Session["id"]));
+            LabErrorBe.Text = "*";
+            listamesa = negome.mesasXmesero(Convert.ToInt64((Int64)Session["id"]));
                 ddlMesa.DataSource = null;
                 ddlMesa.DataSource = listamesa;
                 ddlMesa.DataTextField = "mesa";
@@ -107,6 +112,7 @@ namespace WebApplication2
 
         protected void CargaMarcasBeb()
         {
+            LabErrorBe.Text = "*";
             listaMarca = negoMarca.listarMarcas();
             ddlMarcas.DataSource = null;
             ddlMarcas.DataSource = listaMarca;
@@ -117,6 +123,7 @@ namespace WebApplication2
         }
         protected void CargaBebida()
         {
+            LabErrorBe.Text = "*";
             listaBebida = negoBebida.listarBebidasXmarca(Convert.ToInt64(ddlMarcas.SelectedItem.Value));
             ddlbebida.DataSource = null;
             ddlbebida.DataSource = listaBebida;
@@ -128,6 +135,7 @@ namespace WebApplication2
 
         protected void CagarddlPlatos()
         {
+            LabErrorBe.Text = "*";
             listaPlato = negoPlato.listarPlatosXtipo(Convert.ToInt64(ddltipo.SelectedItem.Value));
             ddlPlato.DataSource = null;
             ddlPlato.DataSource = listaPlato;
@@ -169,15 +177,24 @@ namespace WebApplication2
         protected void butCarga_Click(object sender, EventArgs e)
         {
             int val = 0;
-
+            int cant = 0;
+            cant = negoPlato.CantidadPlatos(Convert.ToInt64(ddlPlato.SelectedItem.Value));
             if (int.TryParse(txtCant.Text, out val))
             {
-                LabErrorPla.Text = "*";
-                cargarGrilla();
-                negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value),
-                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text),
-                    Convert.ToInt64(Session["id"]), Convert.ToDecimal(labPrecio.Text));
-                cargarGrilla();
+                if (cant >= Convert.ToInt32(txtCant.Text))
+                {
+                    LabErrorPla.Text = "*";
+                    cargarGrilla();
+                    negoPe.AgregarPedidoPla(Convert.ToInt64(ddlPlato.SelectedItem.Value),
+                        Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtCant.Text),
+                        Convert.ToInt64(Session["id"]), Convert.ToDecimal(labPrecio.Text));
+                    cargarGrilla();
+                    CagarddlPlatos();
+                }
+                else
+                {
+                    LabErrorPla.Text = "Solo quedan " + cant + " de " + ddlPlato.SelectedItem.Text;
+                }
             }
                else
             {
@@ -221,13 +238,23 @@ namespace WebApplication2
 
             if (int.TryParse(txtcantbeb.Text, out val))
             {
-                LabErrorBe.Text = "*";
-                cargarGrilla();
-                negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
-                    Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text),
-                     Convert.ToInt64(Session["id"])
-                );
-            cargarGrilla();
+                int cant = 0;
+                cant = negoBebida.CantidadBebidas(Convert.ToInt64(ddlbebida.SelectedItem.Value));
+                if (cant >= Convert.ToInt32(txtcantbeb.Text))
+                {
+                    LabErrorBe.Text = "*";
+                    cargarGrilla();
+                    negoPe.AgregarBebidaPla(Convert.ToInt64(ddlbebida.SelectedItem.Value),
+                        Convert.ToInt64(Session["idMesa"]), Convert.ToInt64(txtcantbeb.Text),
+                         Convert.ToInt64(Session["id"])
+                    );
+                    cargarGrilla();
+                    CargaBebida();
+                }
+                else
+                {
+                    LabErrorBe.Text = "Solo quedan " + cant + " de "+ ddlbebida.SelectedItem.Text;
+                }
             }
             else
             {

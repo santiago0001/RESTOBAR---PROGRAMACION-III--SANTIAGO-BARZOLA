@@ -44,10 +44,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboVajilla = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grupVajilla = new System.Windows.Forms.GroupBox();
             this.BotNew = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCant = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grupVajilla.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +88,7 @@
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(10, 361);
+            this.Aceptar.Location = new System.Drawing.Point(10, 439);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(84, 35);
             this.Aceptar.TabIndex = 8;
@@ -96,7 +98,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(108, 361);
+            this.Cancelar.Location = new System.Drawing.Point(108, 439);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(92, 35);
             this.Cancelar.TabIndex = 9;
@@ -196,19 +198,19 @@
             this.comboVajilla.TabIndex = 20;
             this.comboVajilla.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // groupBox1
+            // grupVajilla
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboVajilla);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dgvVajilla);
-            this.groupBox1.Location = new System.Drawing.Point(12, 167);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 188);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vajillas por plato";
+            this.grupVajilla.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grupVajilla.Controls.Add(this.button2);
+            this.grupVajilla.Controls.Add(this.comboVajilla);
+            this.grupVajilla.Controls.Add(this.button1);
+            this.grupVajilla.Controls.Add(this.dgvVajilla);
+            this.grupVajilla.Location = new System.Drawing.Point(10, 245);
+            this.grupVajilla.Name = "grupVajilla";
+            this.grupVajilla.Size = new System.Drawing.Size(469, 188);
+            this.grupVajilla.TabIndex = 21;
+            this.grupVajilla.TabStop = false;
+            this.grupVajilla.Text = "Vajillas por plato";
             // 
             // BotNew
             // 
@@ -220,15 +222,33 @@
             this.BotNew.UseVisualStyleBackColor = true;
             this.BotNew.Click += new System.EventHandler(this.BotNew_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Cantidad";
+            // 
+            // txtCant
+            // 
+            this.txtCant.Location = new System.Drawing.Point(100, 163);
+            this.txtCant.Name = "txtCant";
+            this.txtCant.Size = new System.Drawing.Size(100, 20);
+            this.txtCant.TabIndex = 24;
+            // 
             // AltaPlato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(532, 407);
+            this.ClientSize = new System.Drawing.Size(515, 486);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCant);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.BotNew);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grupVajilla);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.idLabel);
@@ -248,7 +268,7 @@
             this.Text = "Agregado de plato";
             this.Load += new System.EventHandler(this.AltaPlato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.grupVajilla.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +292,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboVajilla;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grupVajilla;
         private System.Windows.Forms.Button BotNew;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtCant;
     }
 }
