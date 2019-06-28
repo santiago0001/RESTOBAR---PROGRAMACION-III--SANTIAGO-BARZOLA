@@ -435,6 +435,44 @@ namespace Negocio
         }
 
 
+        public bool LoginMaster(string us, string con)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            Int64 cantidad=0;
+
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "spLogin '" + us + "','" + con+"'";
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (!Convert.IsDBNull(lector["id"]))
+                        cantidad = lector.GetInt64(0);
+                }
+
+                if (cantidad>0)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
 
     }

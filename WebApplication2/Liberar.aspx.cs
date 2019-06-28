@@ -26,7 +26,6 @@ namespace WebApplication2
             }
 
 
-            ddlmesas.AutoGenerateSelectButton = true;
             cargarGrilla();
         }
 
@@ -51,23 +50,24 @@ namespace WebApplication2
             {
                 btnLiberar.Text = "Liberar";
             }
-            Label1.Text = "Mesa "+ ddlmesas.SelectedRow.Cells[2].Text;
+            Label1.Text = "Mesa " + ddlmesas.SelectedRow.Cells[2].Text;
         }
 
         protected void btnLiberar_Click(object sender, EventArgs e)
         {
-            if (ddlmesas.SelectedRow != null) { 
-                
-                if (btnLiberar.Text=="Liberar")
-                {
-                    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), false);
-                    btnLiberar.Text = "Ocupar";
-                }
-                else if (btnLiberar.Text == "Ocupar")
-                {
-                    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), true);
-                    btnLiberar.Text = "Liberar";
-                }
+            if (ddlmesas.SelectedRow != null)
+            {
+
+                //if (btnLiberar.Text == "Liberar")
+                //{
+                //    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), false);
+                //    btnLiberar.Text = "Ocupar";
+                //}
+                //else if (btnLiberar.Text == "Ocupar")
+                //{
+                //    negome.LiberarMesa(Convert.ToInt64(ddlmesas.SelectedRow.Cells[2].Text), true);
+                //    btnLiberar.Text = "Liberar";
+                //}
 
 
                 cargarGrilla();
@@ -81,10 +81,10 @@ namespace WebApplication2
 
         protected void ddlmesas_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Cells[1].Visible = false;
+            e.Row.Cells[0].Visible = false;
+            e.Row.Cells[2].Visible = false;
             e.Row.Cells[3].Visible = false;
             e.Row.Cells[4].Visible = false;
-            e.Row.Cells[5].Visible = false;
 
 
         }

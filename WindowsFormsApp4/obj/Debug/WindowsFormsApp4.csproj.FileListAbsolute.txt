@@ -286,3 +286,4 @@ C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\Wi
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CopyComplete
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
 C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+C:\Users\canch\OneDrive\Desktop\RESTOBAR---PROGRAMACION-III--SANTIAGO-BARZOLA\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Login.resources

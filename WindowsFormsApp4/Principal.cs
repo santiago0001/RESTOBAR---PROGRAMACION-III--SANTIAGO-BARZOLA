@@ -98,14 +98,24 @@ namespace WindowsFormsApp4
             }
             
         }
+        Login f1 = Application.OpenForms.OfType<Login>().SingleOrDefault();
+
         private void Principal_Load(object sender, EventArgs e)
         {
-            
+
+            f1.Visible=false;
+
             dateDesde.Value = DateTime.Today.AddDays(-7);
             loadFecha(false);
 
             btnPedidosxEm.Enabled = false;
             RecargarCharts();
+            btnPedidosxEm.Enabled = false;
+            chart1.Visible = false;
+            ChPed.Visible = true;
+            btnPlatoPop.Enabled = true;
+            btnDias.Enabled = true;
+            chart2.Visible = false;
         }
 
         private void AdministracionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,33 +125,40 @@ namespace WindowsFormsApp4
 
         private void RecargarCharts()
         {
-            ListaEmpleado = negoest.listaEmpleadosCan(dateDesde.Value.Date.ToString("yyyy/MM/dd"), dateHasta.Value.Date.ToString("yyyy/MM/dd"));
+
+            ListaEmpleado = negoest.listaEmpleadosCan(dateDesde.Value.Date.ToString("yyyy/MM/dd"),
+            dateHasta.Value.Date.ToString("yyyy/MM/dd"));
+            ChPed.ChartAreas[0].AxisY.Maximum = ListaEmpleado[0].CantidadPlatos +20;
 
             ChPed.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             ChPed.Titles.Add("PEDIDOS POR MESERO");
-
             for (int i = 0; i < ListaEmpleado.Count; i++)
             {
                 Series serie = ChPed.Series.Add(ListaEmpleado[i].Nombre);
                 serie.Label = ListaEmpleado[i].CantidadPlatos.ToString();
                 serie.Points.Add(ListaEmpleado[i].CantidadPlatos);
+
             }
 
 
 
 
-            listaPlatoEst = negoest.ListarPlatoEst();
+            listaPlatoEst = negoest.ListarPlatoEst(dateDesde.Value.Date.ToString("yyyy/MM/dd"),
+            dateHasta.Value.Date.ToString("yyyy/MM/dd"));
+            chart1.ChartAreas[0].AxisY.Maximum = listaPlatoEst[0].Cantidad + 10;
+
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             chart1.Titles.Add("PLATOS MAS PEDIDOS");
 
             for (int i = 0; i < listaPlatoEst.Count; i++)
             {
-                Series serie1 = chart1.Series.Add(listaPlatoEst[i].Nombre);
+                Series serie1 = new Series();
+                    serie1 = chart1.Series.Add(listaPlatoEst[i].Nombre);
                 serie1.Label = listaPlatoEst[i].Cantidad.ToString();
                 serie1.Points.Add(listaPlatoEst[i].Cantidad);
             }
-            btnPlatoPop.Enabled = false;
-            btnPedidosxEm.Enabled = true;
+            //btnPlatoPop.Enabled = false;
+            //btnPedidosxEm.Enabled = true;
 
 
             listaDias = negoest.ListarDiasEst();
@@ -154,12 +171,7 @@ namespace WindowsFormsApp4
                 serie1.Label = "$" + listaDias[i].Recaudacion.ToString();
                 serie1.Points.Add(Convert.ToDouble(listaDias[i].Recaudacion));
             }
-            btnPedidosxEm.Enabled = false;
-            chart1.Visible = false;
-            ChPed.Visible = true;
-            btnPlatoPop.Enabled = true;
-            btnDias.Enabled = true;
-            chart2.Visible = false;
+            
         }
 
 
@@ -250,7 +262,6 @@ namespace WindowsFormsApp4
                 chart2.Series.Clear();
                 chart2.Titles.Clear();
 
-
                 RecargarCharts();
                 
             }
@@ -260,6 +271,16 @@ namespace WindowsFormsApp4
                 loadFecha(true);
             }
             
+        }
+
+        private void Chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            f1.Close();
         }
     }
     }
