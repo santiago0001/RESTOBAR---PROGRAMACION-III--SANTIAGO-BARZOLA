@@ -28,6 +28,8 @@ namespace WindowsFormsApp4.Bebidas
 
         private void ButAceptar_Click(object sender, EventArgs e)
         {
+            
+
 
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
@@ -36,7 +38,15 @@ namespace WindowsFormsApp4.Bebidas
                 MessageBox.Show("Debe completar el nombre");
 
             }
-                                                         
+            else if (txtPrecio.Text=="")
+            {
+                MessageBox.Show("Debe completar el precio");
+            }
+            else if (txtCant.Text == "")
+            {
+                MessageBox.Show("Debe completar la cantidad");
+            }
+
 
             else
             {
@@ -123,7 +133,17 @@ namespace WindowsFormsApp4.Bebidas
 
         private void ButCancelar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back);
+        }
+
+        private void TxtCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back);
         }
     }
 }

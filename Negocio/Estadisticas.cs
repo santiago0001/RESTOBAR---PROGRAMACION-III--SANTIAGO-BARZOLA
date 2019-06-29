@@ -33,6 +33,8 @@ namespace Negocio
                     nuevo = new  EmpleadoEstadistica();
                     nuevo.Nombre = lector.GetString(0);
                     nuevo.CantidadPlatos = lector.GetInt32(1);
+                    nuevo.Dni = lector.GetInt32(2);
+
 
                     listado.Add(nuevo);
 

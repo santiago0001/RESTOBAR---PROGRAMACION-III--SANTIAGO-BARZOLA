@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.ChPed = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnPedidosxEm = new System.Windows.Forms.Button();
@@ -52,7 +52,6 @@
             this.vajillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPlatoPop = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnDias = new System.Windows.Forms.Button();
             this.dateDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnDias = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChPed)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -73,18 +73,18 @@
             // 
             // ChPed
             // 
-            chartArea7.Name = "ChartArea1";
-            this.ChPed.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.ChPed.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.ChPed.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChPed.Legends.Add(legend1);
             this.ChPed.Location = new System.Drawing.Point(137, 41);
             this.ChPed.Name = "ChPed";
             this.ChPed.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.ChPed.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChPed.Series.Add(series1);
             this.ChPed.Size = new System.Drawing.Size(893, 570);
             this.ChPed.TabIndex = 8;
             this.ChPed.Text = "chart1";
@@ -188,33 +188,19 @@
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(137, 41);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(893, 604);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
-            // 
-            // btnDias
-            // 
-            this.btnDias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDias.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDias.FlatAppearance.BorderSize = 0;
-            this.btnDias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDias.Location = new System.Drawing.Point(12, 101);
-            this.btnDias.Name = "btnDias";
-            this.btnDias.Size = new System.Drawing.Size(119, 24);
-            this.btnDias.TabIndex = 15;
-            this.btnDias.Text = "Recaudacion dias";
-            this.btnDias.UseVisualStyleBackColor = true;
-            this.btnDias.Click += new System.EventHandler(this.Button1_Click_2);
             // 
             // dateDesde
             // 
@@ -273,16 +259,16 @@
             // 
             // chart2
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart2.Legends.Add(legend9);
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
             this.chart2.Location = new System.Drawing.Point(137, 41);
             this.chart2.Name = "chart2";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart2.Series.Add(series9);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(893, 604);
             this.chart2.TabIndex = 14;
             this.chart2.Text = "chart2";
@@ -331,11 +317,25 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click_1);
             // 
+            // btnDias
+            // 
+            this.btnDias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDias.FlatAppearance.BorderSize = 0;
+            this.btnDias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDias.Location = new System.Drawing.Point(12, 101);
+            this.btnDias.Name = "btnDias";
+            this.btnDias.Size = new System.Drawing.Size(119, 24);
+            this.btnDias.TabIndex = 26;
+            this.btnDias.Text = "Recaudacion por dia";
+            this.btnDias.UseVisualStyleBackColor = true;
+            this.btnDias.Click += new System.EventHandler(this.Button2_Click_1);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 660);
+            this.Controls.Add(this.btnDias);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -345,7 +345,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateDesde);
-            this.Controls.Add(this.btnDias);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnPlatoPop);
@@ -386,7 +385,6 @@
         private System.Windows.Forms.ToolStripMenuItem vajillaToolStripMenuItem;
         private System.Windows.Forms.Button btnPlatoPop;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button btnDias;
         private System.Windows.Forms.DateTimePicker dateDesde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -398,6 +396,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDias;
     }
 }
 

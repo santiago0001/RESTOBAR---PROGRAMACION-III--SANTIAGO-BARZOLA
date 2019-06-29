@@ -48,6 +48,7 @@
             this.BotNew = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCant = new System.Windows.Forms.TextBox();
+            this.LabError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVajilla)).BeginInit();
             this.grupVajilla.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // txtNombrePla
             // 
             this.txtNombrePla.Location = new System.Drawing.Point(100, 34);
+            this.txtNombrePla.MaxLength = 20;
             this.txtNombrePla.Name = "txtNombrePla";
             this.txtNombrePla.Size = new System.Drawing.Size(100, 20);
             this.txtNombrePla.TabIndex = 6;
@@ -85,6 +87,7 @@
             this.txtPrecioPla.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioPla.TabIndex = 7;
             this.txtPrecioPla.TextChanged += new System.EventHandler(this.txtPrecioPla_TextChanged);
+            this.txtPrecioPla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioPla_KeyPress);
             // 
             // Aceptar
             // 
@@ -155,6 +158,7 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(254, 34);
+            this.txtDesc.MaxLength = 50;
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(169, 48);
@@ -237,6 +241,19 @@
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(100, 20);
             this.txtCant.TabIndex = 24;
+            this.txtCant.TextChanged += new System.EventHandler(this.TxtCant_TextChanged);
+            this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCant_KeyPress);
+            // 
+            // LabError
+            // 
+            this.LabError.AutoSize = true;
+            this.LabError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabError.ForeColor = System.Drawing.Color.Red;
+            this.LabError.Location = new System.Drawing.Point(59, 207);
+            this.LabError.Name = "LabError";
+            this.LabError.Size = new System.Drawing.Size(14, 16);
+            this.LabError.TabIndex = 25;
+            this.LabError.Text = "*";
             // 
             // AltaPlato
             // 
@@ -245,6 +262,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(515, 486);
             this.ControlBox = false;
+            this.Controls.Add(this.LabError);
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BotNew);
@@ -296,5 +314,6 @@
         private System.Windows.Forms.Button BotNew;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCant;
+        private System.Windows.Forms.Label LabError;
     }
 }

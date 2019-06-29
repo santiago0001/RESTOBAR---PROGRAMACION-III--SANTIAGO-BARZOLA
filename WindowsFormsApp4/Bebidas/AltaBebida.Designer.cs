@@ -88,6 +88,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(112, 87);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(120, 20);
             this.txtNombre.TabIndex = 4;
@@ -155,6 +156,7 @@
             // txtDescrip
             // 
             this.txtDescrip.Location = new System.Drawing.Point(112, 131);
+            this.txtDescrip.MaxLength = 50;
             this.txtDescrip.Multiline = true;
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(179, 67);
@@ -166,6 +168,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(120, 20);
             this.txtPrecio.TabIndex = 10;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio_KeyPress);
             // 
             // butAceptar
             // 
@@ -202,6 +205,7 @@
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(100, 20);
             this.txtCant.TabIndex = 14;
+            this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCant_KeyPress);
             // 
             // BotNewMar
             // 

@@ -44,6 +44,7 @@
             this.comboPues = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
+            this.labError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +113,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(84, 50);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 7;
@@ -119,6 +121,7 @@
             // txtApe
             // 
             this.txtApe.Location = new System.Drawing.Point(84, 86);
+            this.txtApe.MaxLength = 20;
             this.txtApe.Name = "txtApe";
             this.txtApe.Size = new System.Drawing.Size(100, 20);
             this.txtApe.TabIndex = 8;
@@ -126,6 +129,7 @@
             // txtUs
             // 
             this.txtUs.Location = new System.Drawing.Point(85, 182);
+            this.txtUs.MaxLength = 20;
             this.txtUs.Name = "txtUs";
             this.txtUs.Size = new System.Drawing.Size(100, 20);
             this.txtUs.TabIndex = 10;
@@ -133,6 +137,7 @@
             // txtCon
             // 
             this.txtCon.Location = new System.Drawing.Point(85, 212);
+            this.txtCon.MaxLength = 10;
             this.txtCon.Name = "txtCon";
             this.txtCon.Size = new System.Drawing.Size(100, 20);
             this.txtCon.TabIndex = 11;
@@ -155,6 +160,7 @@
             this.button3.TabIndex = 14;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // comboPues
             // 
@@ -166,6 +172,7 @@
             this.comboPues.Name = "comboPues";
             this.comboPues.Size = new System.Drawing.Size(100, 21);
             this.comboPues.TabIndex = 15;
+            this.comboPues.Text = "Mesero";
             // 
             // label2
             // 
@@ -184,11 +191,23 @@
             this.txtDni.TabIndex = 17;
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDni_KeyPress);
             // 
+            // labError
+            // 
+            this.labError.AutoSize = true;
+            this.labError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labError.ForeColor = System.Drawing.Color.Red;
+            this.labError.Location = new System.Drawing.Point(65, 238);
+            this.labError.Name = "labError";
+            this.labError.Size = new System.Drawing.Size(14, 16);
+            this.labError.TabIndex = 18;
+            this.labError.Text = "*";
+            // 
             // ABMempleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 308);
+            this.Controls.Add(this.labError);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboPues);
@@ -231,5 +250,6 @@
         private System.Windows.Forms.ComboBox comboPues;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.Label labError;
     }
 }

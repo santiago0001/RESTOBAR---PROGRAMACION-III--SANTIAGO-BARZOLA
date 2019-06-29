@@ -134,7 +134,8 @@ namespace WindowsFormsApp4
             ChPed.Titles.Add("PEDIDOS POR MESERO");
             for (int i = 0; i < ListaEmpleado.Count; i++)
             {
-                Series serie = ChPed.Series.Add(ListaEmpleado[i].Nombre);
+
+                Series serie = ChPed.Series.Add(ListaEmpleado[i].Nombre+", DNI:"+ ListaEmpleado[i].Dni);
                 serie.Label = ListaEmpleado[i].CantidadPlatos.ToString();
                 serie.Points.Add(ListaEmpleado[i].CantidadPlatos);
 
@@ -281,6 +282,13 @@ namespace WindowsFormsApp4
         private void Button3_Click_1(object sender, EventArgs e)
         {
             f1.Close();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            btnDias.Enabled = false; chart2.Visible = true;
+                chart1.Visible = false; btnPlatoPop.Enabled = true;
+                ChPed.Visible = false; btnPedidosxEm.Enabled = true;
         }
     }
     }

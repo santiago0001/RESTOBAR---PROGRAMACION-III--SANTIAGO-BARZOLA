@@ -49,6 +49,22 @@ namespace Negocio
                 if (PlatoLocal == null)
                     PlatoLocal = new Plato();
 
+                if (txtCant.Text=="")
+            {
+                LabError.Text = "falta cantidad";
+
+            }
+            else if (txtNombrePla.Text == "")
+            {
+                LabError.Text = "falta nombre";
+
+            }
+            else if (txtPrecioPla.Text == "")
+            {
+                LabError.Text = "falta precio";
+
+            }
+                else { 
             // si es existente
             PlatoLocal.Tipo = (TipoPlato)comboBoxPla.SelectedItem;
             PlatoLocal.Descripcion = txtDesc.Text;
@@ -72,7 +88,8 @@ namespace Negocio
                 }
 
                 Close();
-            
+            }
+
         }
         private void LlenarComboVajilla()
         {
@@ -200,6 +217,21 @@ namespace Negocio
 
             }
                 
+        }
+
+        private void TxtPrecioPla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back);
+        }
+
+        private void TxtCant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back);
         }
     }
 }

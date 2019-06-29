@@ -475,5 +475,48 @@ namespace Negocio
         }
 
 
+
+
+        public bool ChequeoDNI(int dni,bool ban)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            Int64 cantidad = 0;
+
+            try
+            { if (ban == true) { return false; }
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
+                comando.CommandText = "spDNI " + dni ;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if (!Convert.IsDBNull(lector["dni"]))
+                        cantidad = lector.GetInt32(0);
+                        
+                }
+
+                if (cantidad > 0)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
     }
 }
